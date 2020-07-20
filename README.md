@@ -1,5 +1,5 @@
 # README
-https://app.codeship.com/projects/cafd2db0-ace2-0138-c747-76dd5aede139/status?branch=master
+[![Codeship Status for LegioTitanicus/Ice_Cream_Social](https://app.codeship.com/projects/cafd2db0-ace2-0138-c747-76dd5aede139/status?branch=master)](https://app.codeship.com/projects/403543)
 
 Ice Cream Social
 Review your favorite flavors!
