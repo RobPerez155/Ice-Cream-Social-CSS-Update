@@ -9,6 +9,4 @@ namespace :api do
   end
 end
 
- 
-
 end

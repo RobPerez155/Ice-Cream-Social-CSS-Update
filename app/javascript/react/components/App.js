@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 import Regions from "./Regions";
