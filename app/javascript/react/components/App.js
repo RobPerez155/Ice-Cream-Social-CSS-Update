@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 
-export const App = (props) => {
-  return (<h1>Make It So React</h1>)
-}
+import Regions from "./Regions";
 
-export default App
+const App = (props) => {
+  return (
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Regions} />
+        </Switch>
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default App;
