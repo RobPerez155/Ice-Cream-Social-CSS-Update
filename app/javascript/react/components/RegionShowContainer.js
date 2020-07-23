@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import RegionTile from "./RegionTile";
+import FlavorTile from "./FlavorTile";
 
-const Regions = (props) => {
-  const [getRegions, setRegions] = useState([]);
-
+const RegionShowContainer = (props) => {
+  const [getFlavors, setFlavors] = useState([]);
   useEffect(() => {
-    fetch("/api/v1/regions")
+    let id = props.match.params.id
+    fetch(`/api/v1/regions/${id}`)
       .then((response) => {
         if (response.ok) {
           return response;
@@ -17,17 +17,17 @@ const Regions = (props) => {
       })
       .then((response) => response.json())
       .then((body) => {
-        let regionList = body;
-        setRegions(regionList);
+        let flavorList = body;
+        setFlavors(flavorList);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
+  const listFlavors = getFlavors.map((flavor) => {
 
-  const listRegions = getRegions.map((region) => {
-    return <RegionTile key={region.name} name={region.name} />;
+    return <FlavorTile key={flavor.name} name={flavor.name} />;
   });
 
-  return <div>{listRegions}</div>;
+  return <div>{listFlavors}</div>;
 };
 
-export default Regions;
+export default RegionShowContainer;
