@@ -9,6 +9,11 @@ namespace :api do
   end
 end
 
+namespace :api do
+  namespace :v1 do
+    resources :flavors, only: [:index]
+  end
+end
  
 
 end
