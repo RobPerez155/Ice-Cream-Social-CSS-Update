@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
-import StarRating from "./StarRating";
+import { StarRating } from "@thumbtack/thumbprint-react";
 
 const ReviewForm = () => {
-  const [review, setReview] = useState({
-    overall: null,
-    sweetness: null,
-    mouth_feel: null,
-    taste: null,
+  const [reviewText, setReviewText] = useState({
     comment: "",
     manufacturer: "",
   });
 
+  const [overallRating, setOverallRating] = useState(null);
+  const [sweetnessRating, setSweetnessRating] = useState(null);
+  const [mouthFeelRating, setMouthFeelRating] = useState(null);
+  const [tasteRating, setTasteRating] = useState(null);
+
+  const [hoverRating, setHoverRating] = useState(undefined);
+
   const handleInputChange = (event) => {
-    setReview({
-      ...review,
+    console.log(event.currentTarget);
+    setReviewText({
+      ...reviewText,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   };
@@ -38,23 +42,91 @@ const ReviewForm = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <h5>Overall</h5>
-        <StarRating rating={review} handleInputChange={handleInputChange} />
+        <StarRating
+          size="large"
+          name="overall"
+          rating={overallRating}
+          // hoverRating={hoverRating}
+          onStarClick={(value) => {
+            setOverallRating(value);
+            console.log(`StarRating: Clicked overall rating ${value}`);
+          }}
+          // onStarHover={(value) => {
+          //   setHoverRating(value);
+          //   console.log(`StarRating: Hovered over ${value}`);
+          // }}
+          // onMouseLeave={() => {
+          //   setHoverRating(undefined);
+          //   console.log("StarRating: onMouseLeave");
+          // }}
+        />
 
         <h5>Sweetness</h5>
-        <StarRating rating={review} handleInputChange={handleInputChange} />
+        <StarRating
+          size="large"
+          name="overall"
+          rating={sweetnessRating}
+          // hoverRating={hoverRating}
+          onStarClick={(value) => {
+            setSweetnessRating(value);
+            console.log(`StarRating: Clicked Sweetness rating ${value}`);
+          }}
+          // onStarHover={(value) => {
+          //   setHoverRating(value);
+          //   console.log(`StarRating: Hovered over ${value}`);
+          // }}
+          // onMouseLeave={() => {
+          //   setHoverRating(undefined);
+          //   console.log("StarRating: onMouseLeave");
+          // }}
+        />
 
         <h5>Mouth Feel</h5>
-        <StarRating rating={review} handleInputChange={handleInputChange} />
+        <StarRating
+          size="large"
+          name="overall"
+          rating={mouthFeelRating}
+          // hoverRating={hoverRating}
+          onStarClick={(value) => {
+            setMouthFeelRating(value);
+            console.log(`StarRating: Clicked Mouthfeel rating ${value}`);
+          }}
+          // onStarHover={(value) => {
+          //   setHoverRating(value);
+          //   console.log(`StarRating: Hovered over ${value}`);
+          // }}
+          // onMouseLeave={() => {
+          //   setHoverRating(undefined);
+          //   console.log("StarRating: onMouseLeave");
+          // }}
+        />
 
         <h5>Taste</h5>
-        <StarRating rating={review} handleInputChange={handleInputChange} />
+        <StarRating
+          size="large"
+          name="overall"
+          rating={tasteRating}
+          // hoverRating={hoverRating}
+          onStarClick={(value) => {
+            setTasteRating(value);
+            console.log(`StarRating: Clicked Taste rating ${value}`);
+          }}
+          // onStarHover={(value) => {
+          //   setHoverRating(value);
+          //   console.log(`StarRating: Hovered over ${value}`);
+          // }}
+          // onMouseLeave={() => {
+          //   setHoverRating(undefined);
+          //   console.log("StarRating: onMouseLeave");
+          // }}
+        />
 
         <label>
           Comment:
           <textarea
             name="comment"
             onChange={handleInputChange}
-            value={review.comment}
+            value={reviewText.comment}
           />
         </label>
 
@@ -65,7 +137,7 @@ const ReviewForm = () => {
           <textarea
             name="manufacturer"
             onChange={handleInputChange}
-            value={review.manufacturer}
+            value={reviewText.manufacturer}
           />
         </label>
 
