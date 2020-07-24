@@ -17,7 +17,7 @@ RSpec.describe Api::V1::RegionsController, type: :controller do
     region: first_region
   )}
 
-  let!(:first_flavor) { Flavor.create(
+  let!(:second_flavor) { Flavor.create(
     name: "Vanilla Boringness",
     description: "It is white.",
     image_url: "www.vanilla.com",
@@ -53,6 +53,9 @@ RSpec.describe Api::V1::RegionsController, type: :controller do
       expect(response.content_type).to eq("application/json")
 
       expect(returned_json.length).to eq(1)
+      expect(returned_json[0]["name"]).to eq("Chocolatey Goodness")
+      expect(returned_json[0]["description"]).to eq("It is brown.")
+      expect(returned_json[0]["image_url"]).to eq("www.chocolate.com")
     end
   end
 end
