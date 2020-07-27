@@ -1,6 +1,6 @@
-class Region < ApplicationRecord
+class Flavor < ApplicationRecord
     validates :name, presence: true
     validates :image_url, presence: true
 
-    has_many :flavors
+    belongs_to :region
 end

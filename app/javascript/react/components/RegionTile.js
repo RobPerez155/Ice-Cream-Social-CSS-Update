@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 const RegionTile = (props) => {
   const { name } = props;
+
   return (
-    <Link to={`/regions/${name}`}>
-      <p>{name}</p>
-    </Link>
+    <div>
+      <Link to={`/regions/${props.id}`}>{name}</Link>
+    </div>
   );
 };
 
-export default RegionTile
+export default RegionTile;
