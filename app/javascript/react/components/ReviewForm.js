@@ -21,19 +21,7 @@ const ReviewForm = () => {
       user_id: 1,
   })
 
-  let testData = {
-    overall: 5,
-    sweetness: 5,
-    mouth_feel: 5,
-    taste: 5,
-    comment: "Good",
-    manufacturer: "Hood",
-    flavor_id: 1,
-    user_id: 1,
-    }
-
   const handleTextInputChange = (event) => {
-    // debugger
     console.log(event.currentTarget);
     setReviewData({
       ...reviewData,
@@ -47,14 +35,6 @@ const ReviewForm = () => {
 
   const handleSubmit = () => {
     event.preventDefault();
-    debugger
-    // setReviewData({
-    //   ...reviewData,
-    //   overall: overallRating,
-    //   sweetness: sweetnessRating,
-    //   mouth_feel: mouthFeelRating,
-    //   taste: tasteRating,     
-    // })
     fetch("/api/v1/reviews", {
       method: "POST",
       credentials: "same-origin",
