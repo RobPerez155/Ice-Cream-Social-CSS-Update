@@ -15,16 +15,65 @@ const ReviewForm = () => {
   const [hoverRating, setHoverRating] = useState(undefined);
 
   const handleInputChange = (event) => {
-    console.log(event.currentTarget);
+    // console.log(event.currentTarget);
     setReviewText({
       ...reviewText,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   };
 
-  const handleSubmit = () => {
+  let hardcodedFlavorId = 1
+  let hardcodedUserId = 1
+
+  // const handleSubmit = () => {
+  //   event.preventDefault();
+  //   // console.log("This button works and doesn't leave the page")
+  //   let newReview = Review.new(
+  //     badStateBandaid
+  //     )
+  //     if (newReview) {
+  //       newReview.save
+  //     } else {
+  //       console.log("Review creation failed")
+  //     }
+
+  // };
+
+
+
+  let badStateBandaid = {
+    overall: overallRating,
+    sweetness: sweetnessRating,
+    mouth_feel: mouthFeelRating,
+    taste: tasteRating,
+    comment: reviewText.comment,
+    manufacturer: reviewText.manufacturer,
+    flavor_id: hardcodedFlavorId,
+    user_id: hardcodedUserId,
+  }
+  
+  const handleSubmit = (badStateBandaid) => {
+    debugger
     event.preventDefault();
-  };
+    fetch("/api/v1/reviews", {
+      method: "POST",
+      credentials: "same-origin",
+      body: JSON.stringify(badStateBandaid)
+    })
+      .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          const errorMessage = `${response.status} (${response.statusText})`
+          const error = new Error(errorMessage)
+          throw error
+        }
+      })
+      .then(response => response.json())
+      .then(body => body)
+      .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
 
   const clear = () => {
     event.preventDefault();
@@ -40,7 +89,7 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="reviewForm">
         <h5>Overall</h5>
         <StarRating
           size="large"
@@ -141,9 +190,10 @@ const ReviewForm = () => {
           />
         </label>
 
-        <button type="clear" value="X" onClick={clear} />
-
-        <button type="submit" value="Submit" />
+        <button type="clear" onClick={clear} className="btn">X</button>
+          <br />
+          <br />
+        <button type="submit" value="Submit" form="reviewForm" className="btn">Submit</button>
       </form>
     </div>
   );

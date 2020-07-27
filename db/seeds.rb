@@ -12,3 +12,6 @@ Region.create(name:"Africa", image_url:"test.com")
 Region.create(name:"Oceania", image_url:"test.com")
 Region.create(name:"Europe", image_url:"test.com")
 Region.create(name:"Asia", image_url:"test.com")
+
+Flavor.create(name: "Cold Ice Cream", description: "It's cold", image_url: "google.com", region_id: 1)
+
