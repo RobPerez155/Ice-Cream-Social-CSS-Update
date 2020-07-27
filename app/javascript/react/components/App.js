@@ -11,7 +11,6 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={RegionsIndexPage} />
           <Route exact path="/regions/:id" component={RegionShowContainer} />
-
         </Switch>
       </BrowserRouter>
     </>
