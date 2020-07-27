@@ -13,5 +13,5 @@ RSpec.describe User, type: :model do
 
   it { should have_valid(:password).when("something") }
   it { should_not have_valid(:password).when(nil, "") }
-  it { should_not have_valid(:password).when("test")
+  it { should_not have_valid(:password).when("test")}
 end
