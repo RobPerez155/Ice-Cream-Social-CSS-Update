@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import { StarRating } from "@thumbtack/thumbprint-react";
 
 const ReviewForm = () => {
-  const [reviewText, setReviewText] = useState({
-    comment: "",
-    manufacturer: "",
-  });
 
   const [overallRating, setOverallRating] = useState(null);
   const [sweetnessRating, setSweetnessRating] = useState(null);
@@ -14,51 +10,59 @@ const ReviewForm = () => {
 
   const [hoverRating, setHoverRating] = useState(undefined);
 
-  const handleInputChange = (event) => {
-    // console.log(event.currentTarget);
-    setReviewText({
-      ...reviewText,
+  const [reviewData, setReviewData] = useState({
+      overall: null,
+      sweetness: null,
+      mouth_feel: null,
+      taste: null,
+      comment: "",
+      manufacturer: "",
+      flavor_id: 1,
+      user_id: 1,
+  })
+
+  let testData = {
+    overall: 5,
+    sweetness: 5,
+    mouth_feel: 5,
+    taste: 5,
+    comment: "Good",
+    manufacturer: "Hood",
+    flavor_id: 1,
+    user_id: 1,
+    }
+
+  const handleTextInputChange = (event) => {
+    // debugger
+    console.log(event.currentTarget);
+    setReviewData({
+      ...reviewData,
       [event.currentTarget.name]: event.currentTarget.value,
+      overall: overallRating,
+      sweetness: sweetnessRating,
+      mouth_feel: mouthFeelRating,
+      taste: tasteRating,
     });
   };
 
-  let hardcodedFlavorId = 1
-  let hardcodedUserId = 1
-
-  // const handleSubmit = () => {
-  //   event.preventDefault();
-  //   // console.log("This button works and doesn't leave the page")
-  //   let newReview = Review.new(
-  //     badStateBandaid
-  //     )
-  //     if (newReview) {
-  //       newReview.save
-  //     } else {
-  //       console.log("Review creation failed")
-  //     }
-
-  // };
-
-
-
-  let badStateBandaid = {
-    overall: overallRating,
-    sweetness: sweetnessRating,
-    mouth_feel: mouthFeelRating,
-    taste: tasteRating,
-    comment: reviewText.comment,
-    manufacturer: reviewText.manufacturer,
-    flavor_id: hardcodedFlavorId,
-    user_id: hardcodedUserId,
-  }
-  
-  const handleSubmit = (badStateBandaid) => {
-    debugger
+  const handleSubmit = () => {
     event.preventDefault();
+    debugger
+    // setReviewData({
+    //   ...reviewData,
+    //   overall: overallRating,
+    //   sweetness: sweetnessRating,
+    //   mouth_feel: mouthFeelRating,
+    //   taste: tasteRating,     
+    // })
     fetch("/api/v1/reviews", {
       method: "POST",
       credentials: "same-origin",
-      body: JSON.stringify(badStateBandaid)
+      body: JSON.stringify(reviewData),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
     })
       .then(response => {
         if (response.ok) {
@@ -72,7 +76,7 @@ const ReviewForm = () => {
       .then(response => response.json())
       .then(body => body)
       .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }
+  };
 
 
   const clear = () => {
@@ -95,11 +99,30 @@ const ReviewForm = () => {
           size="large"
           name="overall"
           rating={overallRating}
+          // exampleOnChange={event => setName(event.target.value)}
+
+          // onClick={event => {debugger
+          //   setReviewData({...reviewData,
+          //   [event.currentTarget.name]: event.currentTarget.value})}}
+
+          // onClick= {event => 
+          //   console.log(event.currentTarget)
+          //   setReviewData({
+          //     ...reviewData,
+          //     [event.currentTarget.name]: event.currentTarget.value,
+          //   })
+          // }
+          // onChange={handleInputChange}
+          // onChange={event => setName(event.target.value)
           // hoverRating={hoverRating}
+
           onStarClick={(value) => {
-            setOverallRating(value);
-            console.log(`StarRating: Clicked overall rating ${value}`);
+            setOverallRating(value)
+            console.log(`StarRating: Clicked overall rating ${value}`)
           }}
+
+          value={reviewData.overall}
+          
           // onStarHover={(value) => {
           //   setHoverRating(value);
           //   console.log(`StarRating: Hovered over ${value}`);
@@ -117,7 +140,7 @@ const ReviewForm = () => {
           rating={sweetnessRating}
           // hoverRating={hoverRating}
           onStarClick={(value) => {
-            setSweetnessRating(value);
+            setSweetnessRating(value)
             console.log(`StarRating: Clicked Sweetness rating ${value}`);
           }}
           // onStarHover={(value) => {
@@ -174,8 +197,8 @@ const ReviewForm = () => {
           Comment:
           <textarea
             name="comment"
-            onChange={handleInputChange}
-            value={reviewText.comment}
+            onChange={handleTextInputChange}
+            value={reviewData.comment}
           />
         </label>
 
@@ -185,8 +208,8 @@ const ReviewForm = () => {
           Brand:
           <textarea
             name="manufacturer"
-            onChange={handleInputChange}
-            value={reviewText.manufacturer}
+            onChange={handleTextInputChange}
+            value={reviewData.manufacturer}
           />
         </label>
 
