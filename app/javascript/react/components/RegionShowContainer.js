@@ -4,9 +4,10 @@ import FlavorTile from "./FlavorTile";
 const RegionShowContainer = (props) => {
   const [getFlavors, setFlavors] = useState([]);
   const [getRegionId, setRegionId] = useState(null);
+  const [getRegionName, setRegionName] = useState(null);
 
   useEffect(() => {
-    let regionId = props.match.params.id
+    let regionId = props.match.params.id;
     fetch(`/api/v1/regions/${regionId}`)
       .then((response) => {
         if (response.ok) {
@@ -22,15 +23,28 @@ const RegionShowContainer = (props) => {
         let flavorList = body;
         setFlavors(flavorList.region.flavors);
         setRegionId(regionId);
+        setRegionName(flavorList.region.name);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
   const listFlavors = getFlavors.map((flavor) => {
-    return <FlavorTile key={flavor.id} name={flavor.name} flavorId={flavor.id} regionId={getRegionId}/>;
+    return (
+      <FlavorTile
+        key={flavor.id}
+        name={flavor.name}
+        flavorId={flavor.id}
+        regionId={getRegionId}
+      />
+    );
   });
 
-  return <div>{listFlavors}</div>;
+  return (
+    <div>
+      <h3>{getRegionName}</h3>
+      {listFlavors}
+    </div>
+  );
 };
 
 export default RegionShowContainer;
