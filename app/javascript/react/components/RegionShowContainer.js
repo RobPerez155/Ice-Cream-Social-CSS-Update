@@ -6,7 +6,7 @@ const RegionShowContainer = (props) => {
   const [getRegionName, setRegionName] = useState(null);
 
   useEffect(() => {
-    let regionId = props.match.params.id
+    let regionId = props.match.params.id;
     fetch(`/api/v1/regions/${regionId}`)
       .then((response) => {
         if (response.ok) {
@@ -27,19 +27,26 @@ const RegionShowContainer = (props) => {
   }, []);
 
   const listFlavors = getFlavors.map((flavor) => {
-    return <FlavorTile 
-      key={flavor.id} 
-      name={flavor.name} 
-      flavorId={flavor.id} 
-      />;
+    return (
+      <FlavorTile
+        key={flavor.id}
+        name={flavor.name}
+        flavorId={flavor.id}
+        image_url={flavor.image_url}
+      />
+    );
   });
 
   return (
     <div>
       <h3>{getRegionName}</h3>
-      {listFlavors}
+      <div className="grid-container">
+        <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+          {listFlavors}
+        </div>
+      </div>
     </div>
-  )
+  );
 };
 
 export default RegionShowContainer;
