@@ -26,36 +26,34 @@ RSpec.describe Api::V1::RegionsController, type: :controller do
 
   describe "GET#index" do
     it "should return a list of all the regions" do
-
       get :index
       returned_json = JSON.parse(response.body)
-
-        expect(response.status).to eq 200
-        expect(response.content_type).to eq("application/json")
-
-
-        expect(returned_json[0]["name"]).to eq "Test Region 1"
-        expect(returned_json[0]["image_url"]).to eq "https://www.google.com"
-
-        expect(returned_json.length).to eq 2
-        expect(returned_json[1]["name"]).to eq "Test Region 2"
-        expect(returned_json[1]["image_url"]).to eq "https://www.google.com"
-
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq("application/json")
+      
+      
+      expect(returned_json["regions"][0]["name"]).to eq "Test Region 1"
+      expect(returned_json["regions"][0]["image_url"]).to eq "https://www.google.com"
+      
+      expect(returned_json["regions"].length).to eq 2
+      expect(returned_json["regions"][1]["name"]).to eq "Test Region 2"
+      expect(returned_json["regions"][1]["image_url"]).to eq "https://www.google.com"
+      
     end
   end
-
+  
   describe "GET#show" do
-    it "should display all ice cream flavors associated with one region" do
-      get :show, params: { id: first_region.id }
-      returned_json = JSON.parse(response.body)
-
+  it "should display all ice cream flavors associated with one region" do
+    get :show, params: { id: first_region.id }
+    returned_json = JSON.parse(response.body)
+    
       expect(response.status).to eq(200)
       expect(response.content_type).to eq("application/json")
 
       expect(returned_json.length).to eq(1)
-      expect(returned_json[0]["name"]).to eq("Chocolatey Goodness")
-      expect(returned_json[0]["description"]).to eq("It is brown.")
-      expect(returned_json[0]["image_url"]).to eq("www.chocolate.com")
+      expect(returned_json["region"]["flavors"][0]["name"]).to eq("Chocolatey Goodness")
+      expect(returned_json["region"]["flavors"][0]["description"]).to eq("It is brown.")
+      expect(returned_json["region"]["flavors"][0]["image_url"]).to eq("www.chocolate.com")
     end
   end
 end

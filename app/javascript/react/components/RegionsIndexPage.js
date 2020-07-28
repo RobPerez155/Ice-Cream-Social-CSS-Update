@@ -4,7 +4,6 @@ import FlavorShowPage from "./FlavorShowPage"
 
 const RegionsIndexPage = (props) => {
   const [getRegions, setRegions] = useState([]);
-
   useEffect(() => {
     fetch("/api/v1/regions")
       .then((response) => {
@@ -19,7 +18,7 @@ const RegionsIndexPage = (props) => {
       .then((response) => response.json())
       .then((body) => {
         let regionList = body;
-        setRegions(regionList);
+        setRegions(regionList.regions);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
@@ -27,8 +26,6 @@ const RegionsIndexPage = (props) => {
   const listRegions = getRegions.map((region) => {
     return <RegionTile key={region.id} name={region.name} id={region.id} />;
   });
-
   return <div>{listRegions}</div>;
 };
-
 export default RegionsIndexPage;
