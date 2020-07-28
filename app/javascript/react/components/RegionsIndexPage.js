@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import RegionTile from "./RegionTile";
+import FlavorShowPage from "./FlavorShowPage"
 
-const Regions = (props) => {
+const RegionsIndexPage = (props) => {
   const [getRegions, setRegions] = useState([]);
-
   useEffect(() => {
     fetch("/api/v1/regions")
       .then((response) => {
@@ -18,16 +18,14 @@ const Regions = (props) => {
       .then((response) => response.json())
       .then((body) => {
         let regionList = body;
-        setRegions(regionList);
+        setRegions(regionList.regions);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
   const listRegions = getRegions.map((region) => {
-    return <RegionTile key={region.name} name={region.name} />;
+    return <RegionTile key={region.id} name={region.name} id={region.id} />;
   });
-
   return <div>{listRegions}</div>;
 };
-
-export default Regions;
+export default RegionsIndexPage;
