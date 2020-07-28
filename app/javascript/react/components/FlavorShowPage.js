@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FlavorInformationComponent from './FlavorInformationPage';
+import FlavorInformationComponent from './FlavorInformationComponent';
 
 const FlavorShowPage = (props) => {
   const [getFlavorData, setFlavorData] = useState({
