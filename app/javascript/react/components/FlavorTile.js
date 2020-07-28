@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FlavorTile = (props) => {
-  const { name, flavorId, regionId } = props;
+const FlavorTile = ({ name, flavorId }) => {
   return (
-    <Link to={`/regions/${regionId}/flavors/${flavorId}`}>{name}</Link>
+    <Link to={`/flavors/${flavorId}`}>{name}</Link>
   );
 };
 

@@ -12,7 +12,7 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={RegionsIndexPage} />
           <Route exact path="/regions/:id" component={RegionShowContainer} />
-          <Route exact path="/regions/:region_id/flavors/:id" component={FlavorShowPage} />
+          <Route exact path="/flavors/:id" component={FlavorShowPage} />
         </Switch>
       </BrowserRouter>
     </>

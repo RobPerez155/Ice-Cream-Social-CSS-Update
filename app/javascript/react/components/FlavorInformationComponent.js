@@ -1,7 +1,6 @@
 import React from "react";
 
-const FlavorInformationComponent = (props) => {
-  const { name, description, image_url } = props;
+const FlavorInformationComponent = ({ name, description, image_url }) => {
   return (
     <>
       <h2>{name}</h2>

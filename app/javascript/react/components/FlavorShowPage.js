@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import FlavorInformationComponent from './FlavorInformationComponent';
+import FlavorInformationComponent from "./FlavorInformationComponent";
 
 const FlavorShowPage = (props) => {
   const [getFlavorData, setFlavorData] = useState({
     name: "",
     description: "",
-    image_url: ""
+    image_url: "",
   });
 
   useEffect(() => {
-  let region_id = props.match.params.region_id
-  let flavor_id = props.match.params.id
-    fetch(`/api/v1/regions/${region_id}/flavors/${flavor_id}`)
+    let flavor_id = props.match.params.id;
+    fetch(`/api/v1/flavors/${flavor_id}`)
       .then((response) => {
         if (response.ok) {
           return response;
@@ -30,10 +29,13 @@ const FlavorShowPage = (props) => {
   }, []);
 
   return (
-    <div>
-      <FlavorInformationComponent key={getFlavorData.id} name={getFlavorData.name} description={getFlavorData.description} image_url={getFlavorData.image_url}/>
-    </div>
-  )
+    <FlavorInformationComponent
+      key={getFlavorData.id}
+      name={getFlavorData.name}
+      description={getFlavorData.description}
+      image_url={getFlavorData.image_url}
+    />
+  );
 };
 
 export default FlavorShowPage;

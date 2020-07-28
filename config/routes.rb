@@ -5,9 +5,8 @@ Rails.application.routes.draw do
 
   namespace :api do 
     namespace :v1 do
-      resources :regions, only: [:index, :show] do
-        resources :flavors, only: [:index, :show]
-      end
+      resources :regions, only: [:index, :show]
+      resources :flavors, only: [:show]
     end
   end
 end
