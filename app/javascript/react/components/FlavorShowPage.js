@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlavorInformationComponent from "./FlavorInformationComponent";
+import { Link } from "react-router-dom";
 
 const FlavorShowPage = (props) => {
   const [getFlavorData, setFlavorData] = useState({
@@ -8,8 +9,9 @@ const FlavorShowPage = (props) => {
     image_url: "",
   });
 
+  let flavor_id = props.match.params.id;
+
   useEffect(() => {
-    let flavor_id = props.match.params.id;
     fetch(`/api/v1/flavors/${flavor_id}`)
       .then((response) => {
         if (response.ok) {
@@ -29,12 +31,20 @@ const FlavorShowPage = (props) => {
   }, []);
 
   return (
-    <FlavorInformationComponent
-      key={getFlavorData.id}
-      name={getFlavorData.name}
-      description={getFlavorData.description}
-      image_url={getFlavorData.image_url}
-    />
+    <div>
+      <FlavorInformationComponent
+        key={getFlavorData.id}
+        name={getFlavorData.name}
+        description={getFlavorData.description}
+        image_url={getFlavorData.image_url}
+      />
+
+      <div>
+        <Link to={`/flavors/${flavor_id}/reviews/new`}>
+          Submit a new Review
+        </Link>
+      </div>
+    </div>
   );
 };
 
