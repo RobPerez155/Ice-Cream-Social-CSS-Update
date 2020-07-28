@@ -3,12 +3,12 @@ import FlavorTile from "./FlavorTile";
 
 const RegionShowContainer = (props) => {
   const [getFlavors, setFlavors] = useState([]);
-  
+  const [getRegionName, setRegionName] = useState(null);
+
   useEffect(() => {
-    let id = props.match.params.id
-    fetch(`/api/v1/regions/${id}`)
+    let regionId = props.match.params.id
+    fetch(`/api/v1/regions/${regionId}`)
       .then((response) => {
-        debugger;
         if (response.ok) {
           return response;
         } else {
@@ -20,16 +20,26 @@ const RegionShowContainer = (props) => {
       .then((response) => response.json())
       .then((body) => {
         let flavorList = body;
-        setFlavors(flavorList);
+        setFlavors(flavorList.region.flavors);
+        setRegionName(flavorList.region.name);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
   const listFlavors = getFlavors.map((flavor) => {
-    return <FlavorTile key={flavor.id} region={flavor.region} name={flavor.name} />;
+    return <FlavorTile 
+      key={flavor.id} 
+      name={flavor.name} 
+      flavorId={flavor.id} 
+      />;
   });
 
-  return <div>{listFlavors}</div>;
+  return (
+    <div>
+      <h3>{getRegionName}</h3>
+      {listFlavors}
+    </div>
+  )
 };
 
 export default RegionShowContainer;
