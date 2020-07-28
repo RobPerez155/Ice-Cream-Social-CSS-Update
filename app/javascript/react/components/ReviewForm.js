@@ -3,13 +3,19 @@ import { StarRating } from "@thumbtack/thumbprint-react";
 
 const ReviewForm = () => {
 
+  // These 4 states hold each of our star ratings for review attributes
   const [overallRating, setOverallRating] = useState(null);
   const [sweetnessRating, setSweetnessRating] = useState(null);
   const [mouthFeelRating, setMouthFeelRating] = useState(null);
   const [tasteRating, setTasteRating] = useState(null);
 
-  const [hoverRating, setHoverRating] = useState(undefined);
+  // These 4 states hold hover values for each review attribute
+  const [overallHoverRating, setOverallHoverRating] = useState(undefined);
+  const [sweetnessHoverRating, setSweetnessHoverRating] = useState(undefined);
+  const [mouthFeelHoverRating, setMouthFeelHoverRating] = useState(undefined);
+  const [tasteHoverRating, setTasteHoverRating] = useState(undefined);
 
+  // This complex state holds all other review attributes and receives the state from star ratings attributes before submission
   const [reviewData, setReviewData] = useState({
       overall: null,
       sweetness: null,
@@ -18,11 +24,9 @@ const ReviewForm = () => {
       comment: "",
       manufacturer: "",
       flavor_id: 1,
-      user_id: 1,
   })
 
   const handleTextInputChange = (event) => {
-    console.log(event.currentTarget);
     setReviewData({
       ...reviewData,
       [event.currentTarget.name]: event.currentTarget.value,
@@ -58,19 +62,6 @@ const ReviewForm = () => {
       .catch(error => console.error(`Error in fetch: ${error.message}`))
   };
 
-
-  const clear = () => {
-    event.preventDefault();
-    setReview({
-      overall: null,
-      sweetness: null,
-      mouth_feel: null,
-      taste: null,
-      comment: "",
-      manufacturer: "",
-    });
-  };
-
   return (
     <div>
       <form onSubmit={handleSubmit} id="reviewForm">
@@ -79,38 +70,17 @@ const ReviewForm = () => {
           size="large"
           name="overall"
           rating={overallRating}
-          // exampleOnChange={event => setName(event.target.value)}
-
-          // onClick={event => {debugger
-          //   setReviewData({...reviewData,
-          //   [event.currentTarget.name]: event.currentTarget.value})}}
-
-          // onClick= {event => 
-          //   console.log(event.currentTarget)
-          //   setReviewData({
-          //     ...reviewData,
-          //     [event.currentTarget.name]: event.currentTarget.value,
-          //   })
-          // }
-          // onChange={handleInputChange}
-          // onChange={event => setName(event.target.value)
-          // hoverRating={hoverRating}
-
+          hoverRating={overallHoverRating}
           onStarClick={(value) => {
             setOverallRating(value)
-            console.log(`StarRating: Clicked overall rating ${value}`)
           }}
-
           value={reviewData.overall}
-          
-          // onStarHover={(value) => {
-          //   setHoverRating(value);
-          //   console.log(`StarRating: Hovered over ${value}`);
-          // }}
-          // onMouseLeave={() => {
-          //   setHoverRating(undefined);
-          //   console.log("StarRating: onMouseLeave");
-          // }}
+          onStarHover={(value) => {
+            setOverallHoverRating(value);
+          }}
+          onMouseLeave={() => {
+            setOverallHoverRating(undefined);
+          }}
         />
 
         <h5>Sweetness</h5>
@@ -118,19 +88,16 @@ const ReviewForm = () => {
           size="large"
           name="overall"
           rating={sweetnessRating}
-          // hoverRating={hoverRating}
+          hoverRating={sweetnessHoverRating}
           onStarClick={(value) => {
             setSweetnessRating(value)
-            console.log(`StarRating: Clicked Sweetness rating ${value}`);
           }}
-          // onStarHover={(value) => {
-          //   setHoverRating(value);
-          //   console.log(`StarRating: Hovered over ${value}`);
-          // }}
-          // onMouseLeave={() => {
-          //   setHoverRating(undefined);
-          //   console.log("StarRating: onMouseLeave");
-          // }}
+          onStarHover={(value) => {
+            setSweetnessHoverRating(value);
+          }}
+          onMouseLeave={() => {
+            setSweetnessHoverRating(undefined);
+          }}
         />
 
         <h5>Mouth Feel</h5>
@@ -138,19 +105,16 @@ const ReviewForm = () => {
           size="large"
           name="overall"
           rating={mouthFeelRating}
-          // hoverRating={hoverRating}
+          hoverRating={mouthFeelHoverRating}
           onStarClick={(value) => {
             setMouthFeelRating(value);
-            console.log(`StarRating: Clicked Mouthfeel rating ${value}`);
           }}
-          // onStarHover={(value) => {
-          //   setHoverRating(value);
-          //   console.log(`StarRating: Hovered over ${value}`);
-          // }}
-          // onMouseLeave={() => {
-          //   setHoverRating(undefined);
-          //   console.log("StarRating: onMouseLeave");
-          // }}
+          onStarHover={(value) => {
+            setMouthFeelHoverRating(value);
+          }}
+          onMouseLeave={() => {
+            setMouthFeelHoverRating(undefined);
+          }}
         />
 
         <h5>Taste</h5>
@@ -158,23 +122,20 @@ const ReviewForm = () => {
           size="large"
           name="overall"
           rating={tasteRating}
-          // hoverRating={hoverRating}
+          hoverRating={tasteHoverRating}
           onStarClick={(value) => {
             setTasteRating(value);
-            console.log(`StarRating: Clicked Taste rating ${value}`);
           }}
-          // onStarHover={(value) => {
-          //   setHoverRating(value);
-          //   console.log(`StarRating: Hovered over ${value}`);
-          // }}
-          // onMouseLeave={() => {
-          //   setHoverRating(undefined);
-          //   console.log("StarRating: onMouseLeave");
-          // }}
+          onStarHover={(value) => {
+            setTasteHoverRating(value);
+          }}
+          onMouseLeave={() => {
+            setTasteHoverRating(undefined);
+          }}
         />
 
         <label>
-          Comment:
+          Comment (optional):
           <textarea
             name="comment"
             onChange={handleTextInputChange}
@@ -185,7 +146,7 @@ const ReviewForm = () => {
         <br />
 
         <label>
-          Brand:
+          Brand (required):
           <textarea
             name="manufacturer"
             onChange={handleTextInputChange}
@@ -193,13 +154,15 @@ const ReviewForm = () => {
           />
         </label>
 
-        <button type="clear" onClick={clear} className="btn">X</button>
+        <button type="submit" value="Submit" form="reviewForm">Submit Form</button>
           <br />
           <br />
-        <button type="submit" value="Submit" form="reviewForm" className="btn">Submit</button>
       </form>
     </div>
   );
 };
 
 export default ReviewForm;
+
+
+<input type="submit" value="Submit" />
