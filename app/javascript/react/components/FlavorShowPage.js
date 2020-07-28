@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
+import FlavorInformationComponent from './FlavorInformationPage';
 
 const FlavorShowPage = (props) => {
-  const [getFlavors, setFlavors] = useState([]);
+  const [getFlavorData, setFlavorData] = useState({
+    name: "",
+    description: "",
+    image_url: ""
+  });
+
   useEffect(() => {
-    let region_id = props.match.params.region_id
-    let flavor_id = props.match.params.id
+  let region_id = props.match.params.region_id
+  let flavor_id = props.match.params.id
     fetch(`/api/v1/regions/${region_id}/flavors/${flavor_id}`)
       .then((response) => {
         if (response.ok) {
@@ -17,17 +23,17 @@ const FlavorShowPage = (props) => {
       })
       .then((response) => response.json())
       .then((body) => {
-        let flavorList = body;
-        setFlavors(flavorList);
+        let flavor = body;
+        setFlavorData(flavor);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
-  const listFlavors = getFlavors.map((flavor) => {
 
-    return <FlavorTile key={flavor.name} name={flavor.name} />;
-  });
-
-  return <div>{listFlavors}</div>;
+  return (
+    <div>
+      <FlavorInformationComponent key={getFlavorData.id} name={getFlavorData.name} description={getFlavorData.description} image_url={getFlavorData.image_url}/>
+    </div>
+  )
 };
 
 export default FlavorShowPage;

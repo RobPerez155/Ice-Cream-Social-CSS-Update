@@ -2,11 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const FlavorTile = (props) => {
-  const { name } = props;
+  const { name, flavorId, regionId } = props;
   return (
-    <Link to={`/regions/${name}`}>
-      <p>{name}</p>
-    </Link>
+    <Link to={`/regions/${regionId}/flavors/${flavorId}`}>{name}</Link>
   );
 };
 
