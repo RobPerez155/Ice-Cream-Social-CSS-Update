@@ -9,7 +9,6 @@ const ReviewForm = () => {
   const [mouthFeelRating, setMouthFeelRating] = useState(null);
   const [tasteRating, setTasteRating] = useState(null);
 
-
   // These 4 states hold hover values for each review attribute
   const [overallHoverRating, setOverallHoverRating] = useState(undefined);
   const [sweetnessHoverRating, setSweetnessHoverRating] = useState(undefined);
@@ -63,19 +62,6 @@ const ReviewForm = () => {
       .catch(error => console.error(`Error in fetch: ${error.message}`))
   };
 
-
-  const clear = () => {
-    event.preventDefault();
-    setReview({
-      overall: null,
-      sweetness: null,
-      mouth_feel: null,
-      taste: null,
-      comment: "",
-      manufacturer: "",
-    });
-  };
-
   return (
     <div>
       <form onSubmit={handleSubmit} id="reviewForm">
@@ -85,13 +71,10 @@ const ReviewForm = () => {
           name="overall"
           rating={overallRating}
           hoverRating={overallHoverRating}
-
           onStarClick={(value) => {
             setOverallRating(value)
           }}
-
           value={reviewData.overall}
-          
           onStarHover={(value) => {
             setOverallHoverRating(value);
           }}
@@ -171,13 +154,15 @@ const ReviewForm = () => {
           />
         </label>
 
-        <button type="clear" onClick={clear} className="btn">X</button>
+        <button type="submit" value="Submit" form="reviewForm">Submit Form</button>
           <br />
           <br />
-        <button type="submit" value="Submit" form="reviewForm" className="btn">Submit</button>
       </form>
     </div>
   );
 };
 
 export default ReviewForm;
+
+
+<input type="submit" value="Submit" />
