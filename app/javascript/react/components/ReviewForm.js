@@ -28,6 +28,8 @@ const ReviewForm = (props) => {
       flavor_id: flavorId
   })
 
+  const [getNotice, setNotice] = useState("")
+
   const handleTextInputChange = (event) => {
     setReviewData({
       ...reviewData,
@@ -60,12 +62,17 @@ const ReviewForm = (props) => {
         }
       })
       .then(response => response.json())
-      .then(body => body)
+      .then(body => { 
+        debugger
+        setNotice(body.noticeString)
+        body 
+      })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
   };
 
   return (
     <div>
+      {getNotice} <br/>
       <form onSubmit={handleSubmit} id="reviewForm">
         <h5>Overall</h5>
         <StarRating

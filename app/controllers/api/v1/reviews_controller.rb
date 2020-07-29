@@ -1,14 +1,20 @@
 class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
   
+  def new
+  end
+
   def create
     review = Review.new(review_params)
     review.user_id = current_user.id
     review.username = current_user.username
-    if review.save 
-      flash[:notice] = "Review successfully submitted!"
+    if review.valid?
+      review.save 
+      notice = "Review submitted successfully!"
+      render json: { reviewData: review, noticeString: notice }
     else
-      flash[:notice] = review.errors.full_messages.to_sentence
+      reviewErrors = "Error: " + review.errors.full_messages.to_sentence
+      render json: { noticeString: reviewErrors }
     end
   end
 
