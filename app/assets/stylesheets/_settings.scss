@@ -69,11 +69,11 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #8d6e5f,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
-  alert: #cc4b37,
+  alert: #ffd7d6,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -346,10 +346,10 @@ $callout-link-tint: 30%;
 // 14. Card
 // --------
 
-$card-background: $white;
+$card-background: #EDEDE4;
 $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
-$card-border: 1px solid $light-gray;
+$card-border: 10px solid #c3e9e1;
 $card-shadow: none;
 $card-border-radius: $global-radius;
 $card-padding: $global-padding;

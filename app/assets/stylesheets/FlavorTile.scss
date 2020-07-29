@@ -1,0 +1,25 @@
+.flavor_tile_cell {
+  background-color: #EDEDE4;
+  display: flexbox;
+  vertical-align: middle;
+  width: calc(33.3333333333% - 1.875rem);
+  height: calc(33.3333333333% - 1.875rem);
+  border-radius: 5%;
+  margin: 1%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.image_url {
+  display: flexbox;
+  vertical-align: middle;
+  margin: 5%;
+  border-radius: 25%;
+}
+
+.name {
+  color: #000000;
+  font-size: x-large;
+  text-align: center;
+  margin: 2%;
+}
+
