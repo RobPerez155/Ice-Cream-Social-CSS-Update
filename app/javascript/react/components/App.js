@@ -21,7 +21,6 @@ const App = (props) => {
             component={ReviewForm}
           />
         </Switch>
-        <Link to={"/ReviewForm"}>ReviewForm</Link>
       </BrowserRouter>
     </>
   );

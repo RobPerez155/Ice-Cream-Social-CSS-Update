@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { StarRating } from "@thumbtack/thumbprint-react";
 
-const ReviewForm = () => {
+const ReviewForm = (props) => {
+
+  let flavorId = props.match.params.flavor_id
 
   // These 4 states hold each of our star ratings for review attributes
   const [overallRating, setOverallRating] = useState(null);
@@ -23,7 +25,7 @@ const ReviewForm = () => {
       taste: null,
       comment: "",
       manufacturer: "",
-      flavor_id: 1,
+      flavor_id: flavorId
   })
 
   const handleTextInputChange = (event) => {
@@ -39,7 +41,7 @@ const ReviewForm = () => {
 
   const handleSubmit = () => {
     event.preventDefault();
-    fetch("/api/v1/reviews", {
+    fetch(`/api/v1/flavors/${flavorId}/reviews`, {
       method: "POST",
       credentials: "same-origin",
       body: JSON.stringify(reviewData),

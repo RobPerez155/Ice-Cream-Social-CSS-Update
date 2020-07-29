@@ -40,7 +40,10 @@ const FlavorShowPage = (props) => {
       />
 
       <div>
-        <Link to={`/flavors/${flavor_id}/reviews/new`}>
+        <Link to={{
+          pathname:`/flavors/${flavor_id}/reviews/new`,
+          reviewProps: {flavor_id}
+      }}>
           Submit a new Review
         </Link>
       </div>

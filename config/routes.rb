@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'flavors/:flavor_id/reviews/new', to: 'homes#index'
   get 'regions/:id', to: 'homes#index'
+  
 
   namespace :api do 
     namespace :v1 do

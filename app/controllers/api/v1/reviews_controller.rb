@@ -4,8 +4,12 @@ class Api::V1::ReviewsController < ApplicationController
   def create
     review = Review.new(review_params)
     review.user_id = current_user.id
-    review.username = current_user.email[/[^@]+/]
-    review.save
+    review.username = current_user.username
+    if review.save 
+      flash[:notice] = "Review successfully submitted!"
+    else
+      flash[:notice] = review.errors.full_messages.to_sentence
+    end
   end
 
   def review_params
