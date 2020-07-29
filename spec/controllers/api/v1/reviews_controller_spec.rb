@@ -1,42 +1,5 @@
 require "rails_helper"
 
-RSpec.describe Review, type: :model do
-  User.new(email: "test@test.com", username: "test", password: "testing")
-  it "is valid with valid attributes" do
-    expect(Review.new(
-      overall: 1, 
-      sweetness: 1, 
-      mouth_feel: 1, 
-      taste: 1, 
-      comment: "Testing is fun", 
-      manufacturer: "Boston Ice Cream Co." 
-      username: ,
-      flavor_id: ,
-      user_id: )).to be_valid
-  end
-
-  it { should have_valid(:email).when("test@test.com") }
-  it { should_not have_valid(:email).when(nil, "") }
-
-  it { should have_valid(:username).when("username1")}
-  it { should_not have_valid(:username).when(nil, "") }
-
-  it { should have_valid(:password).when("something") }
-  it { should_not have_valid(:password).when(nil, "") }
-  it { should_not have_valid(:password).when("test")}
-end
-
-
-overall: null,
-sweetness: null,
-mouth_feel: null,
-taste: null,
-comment: "",
-manufacturer: "",
-flavor_id: test_flavor,
-username: ,
-user_id: 
-
 RSpec.describe Api::V1::ReviewsController, type: :controller do
 
   let!(:test_region) { Region.create(
@@ -48,35 +11,48 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     name: "Chocolatey Goodness",
     description: "It is brown.",
     image_url: "www.chocolate.com",
-    region: first_region
+    region: test_region
   )}
 
   let!(:test_user) { User.create(
-    name: "Bob",
-    description: "It is brown.",
-    image_url: "www.chocolate.com",
-    region: first_region
+    username: "Bob",
+    email: "bob@robert.com",
+    password: "something"
   )}
 
-  let!(:bad_review) { Review.new(
-    overall: null,
-    sweetness: null,
-    mouth_feel: null,
-    taste: null,
-    comment: "",
-    manufacturer: "",
-    flavor_id: test_flavor,
-    username: ,
-    user_id: 
-  ) }
 
-  let!(:good_review) { Review.new(
-    overall: null,
-    sweetness: null,
-    mouth_feel: null,
-    taste: null,
-    comment: "",
-    manufacturer: "",
-    flavor_id: test_flavor
-    user
-  )}
+
+  # let!(:good_review) { Review.new(
+  #   overall: null,
+  #   sweetness: null,
+  #   mouth_feel: null,
+  #   taste: null,
+  #   comment: "",
+  #   manufacturer: "",
+  #   flavor: test_flavor,
+  #   user: test_user
+  # )}
+
+  describe "POST#create" do
+    # it "should persist if the review is valid" do
+    # end
+    let!(:bad_review) {{ review: {
+      overall: 5,
+      sweetness: 3,
+      mouth_feel: 4,
+      taste: 5,
+      comment: "",
+      manufacturer: "",
+      flavor_id: test_flavor.id,
+      user_id: test_user.id
+    }}}
+
+    it "should not persist if the review is not valid" do
+      # sign_in test_user
+      post :create, params: bad_review, format: :json
+      returned_json = JSON.parse(response.body)
+      binding.pry
+      expect(returned_json.notice).to eq("Error: Manufacturer can't be blank")
+    end
+  end
+end

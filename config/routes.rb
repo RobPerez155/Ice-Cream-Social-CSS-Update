@@ -12,7 +12,6 @@ Rails.application.routes.draw do
       resources :regions, only: [:index, :show]
       resources :flavors, only: [:show] do
         resources :reviews, only: [:new, :create]
-
       end
     end
     

@@ -16,10 +16,10 @@ const App = (props) => {
           <Route exact path="/regions/:id" component={RegionShowContainer} />
           <Route exact path="/flavors/:id" component={FlavorShowPage} />
           <Route
-            exact
-            path="/flavors/:flavor_id/reviews/new"
-            component={ReviewForm}
-          />
+              exact
+              path="/flavors/:flavor_id/reviews/new"
+              component={ReviewForm}
+            />
         </Switch>
       </BrowserRouter>
     </>

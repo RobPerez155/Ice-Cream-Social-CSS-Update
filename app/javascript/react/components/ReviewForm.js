@@ -62,8 +62,7 @@ const ReviewForm = (props) => {
         }
       })
       .then(response => response.json())
-      .then(body => { 
-        debugger
+      .then(body => {
         setNotice(body.noticeString)
         body 
       })
