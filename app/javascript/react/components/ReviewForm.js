@@ -24,8 +24,7 @@ const ReviewForm = (props) => {
       mouth_feel: null,
       taste: null,
       comment: "",
-      manufacturer: "",
-      flavor_id: flavorId
+      manufacturer: ""
   })
 
   const [getNotice, setNotice] = useState("")

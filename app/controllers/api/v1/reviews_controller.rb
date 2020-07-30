@@ -1,13 +1,13 @@
 class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
-  # before_action :authenticate_user!
 
   def create
-    binding.pry
+
     if current_user.nil?
       render json: { notice: "Please login before submitting a review." }
     else
       review = Review.new(review_params)
+      review.flavor_id = params["flavor_id"]
       review.user_id = current_user.id
       review.username = current_user.username
 
@@ -22,6 +22,6 @@ class Api::V1::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:overall, :sweetness, :mouth_feel, :taste, :comment, :manufacturer, :flavor_id, :user_id)
+    params.require(:review).permit(:overall, :sweetness, :mouth_feel, :taste, :comment, :manufacturer)
   end
 end

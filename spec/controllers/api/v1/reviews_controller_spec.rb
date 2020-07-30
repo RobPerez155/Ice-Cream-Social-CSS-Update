@@ -20,41 +20,59 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     password: "something"
   )}
 
-
-
-  # let!(:good_review) { Review.new(
-  #   overall: null,
-  #   sweetness: null,
-  #   mouth_feel: null,
-  #   taste: null,
-  #   comment: "",
-  #   manufacturer: "",
-  #   flavor: test_flavor,
-  #   user: test_user
-  # )}
-
   describe "POST#create" do
-    # it "should persist if the review is valid" do
-    # end
+
+    let!(:good_review) {{ review: {
+      overall: 3,
+      sweetness: 3,
+      mouth_feel: 3,
+      taste: 3,
+      comment: "Meh.",
+      manufacturer: "Not worth saying."
+    },
+      flavor_id: test_flavor.id
+    }}
+
+    it "should not persist if the user is not authenticated" do
+      count = Review.count
+
+      post :create, params: good_review
+      returned_json = JSON.parse(response.body)
+
+      expect(Review.count).to eq(count)
+      expect(returned_json["notice"]).to eq("Please login before submitting a review.")
+    end
+
+    it "should persist if the review is valid" do
+      count = Review.count
+
+      sign_in test_user
+      post :create, params: good_review
+      returned_json = JSON.parse(response.body)
+
+      expect(Review.count).to eq(count + 1)
+      expect(returned_json["notice"]).to eq("Review submitted successfully!")
+    end
+
     let!(:bad_review) {{ review: {
       overall: 5,
       sweetness: 3,
       mouth_feel: 4,
       taste: 5,
       comment: "",
-      manufacturer: "",
-      flavor_id: test_flavor.id,
-      user_id: test_user.id
+      manufacturer: ""
     },
       flavor_id: test_flavor.id
     }}
 
     it "should not persist if the review is not valid" do
+      count = Review.count
+
       sign_in test_user
-      binding.pry
       post :create, params: bad_review
       returned_json = JSON.parse(response.body)
-      binding.pry
+
+      expect(Review.count).to eq(count)
       expect(returned_json["notice"]).to eq("Error: Manufacturer can't be blank")
     end
   end
