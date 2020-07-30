@@ -17,13 +17,13 @@ RSpec.describe Api::V1::FlavorsController, type: :controller do
   it "should display flavor details associated with one region" do
     get :show, params: { region_id: first_region.id, id: first_flavor.id }
     returned_json = JSON.parse(response.body)
-    
-      expect(response.status).to eq(200)
-      expect(response.content_type).to eq("application/json")
 
-      expect(returned_json["name"]).to eq("Chocolatey Goodness")
-      expect(returned_json["description"]).to eq("It is brown.")
-      expect(returned_json["image_url"]).to eq("www.chocolate.com")
+    expect(response.status).to eq(200)
+    expect(response.content_type).to eq("application/json")
+
+    expect(returned_json["flavorData"]["name"]).to eq("Chocolatey Goodness")
+    expect(returned_json["flavorData"]["description"]).to eq("It is brown.")
+    expect(returned_json["flavorData"]["image_url"]).to eq("www.chocolate.com")
     end
   end
 end
