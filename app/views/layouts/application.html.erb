@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IceCreamSocial</title>
+  <title>Ice Cream Social</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   
-  <nav class="top-bar">
-    <h1><a href="/">IceCreamSocial</a></h1>
+  <nav class="top-bar topbar-responsive">
+    <h1><a id="title-link" href="/">Ice Cream Social</a></h1>
 
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li id="sign-out"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li id="sign-up"><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li id="sign-in"><%= link_to 'Log in', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
