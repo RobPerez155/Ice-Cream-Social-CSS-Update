@@ -19,14 +19,17 @@
 
 #sign-up {
   color: #8d6e5f;
+  background-color: #f6edc7;
 }
 
 #sign-in {
   color: #8d6e5f;
+  background-color: #f6edc7;
 }
 
 #sign-out {
   color: #8d6e5f;
+  background-color: #f6edc7;
 }
 
 #sign-up:hover {
@@ -47,6 +50,8 @@ a:hover {
 
 h3 {
   text-align: center;
+  font-family: 'Lobster-Regular';
+  
 }
 
 span.region-index-description {
@@ -123,4 +128,13 @@ div.card-section {
   border: 20px solid #ffd7d6;
   border-radius: 25px;
   overflow: scroll;
+}
+
+@font-face {
+  font-family: 'Lobster-Regular';
+  src: url('/app/assets/fonts/Lobster-Regular.ttf')
+}
+
+h1 a {
+  font-family: 'Lobster-Regular';
 }
