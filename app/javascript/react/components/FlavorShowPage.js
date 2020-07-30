@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlavorInformationComponent from "./FlavorInformationComponent";
+import ReviewTile from "./ReviewTile";
 import { Link } from "react-router-dom";
 
 const FlavorShowPage = (props) => {
@@ -29,10 +30,19 @@ const FlavorShowPage = (props) => {
         let flavor = body.flavorData;
         let reviews = body.reviewsData;
         setFlavorData(flavor);
-        setReviews(reviews)
+        setReviews(reviews);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
+
+  let reviewList = getReviews.map((review) => {
+    return (
+      <ReviewTile
+        key={review.id}
+        reviewData={review}
+      />
+    )
+  })
 
   return (
     <div>
@@ -43,11 +53,13 @@ const FlavorShowPage = (props) => {
         image_url={getFlavorData.image_url}
       />
 
+      {reviewList}
+
       <div>
         <Link to={{
           pathname:`/flavors/${flavor_id}/reviews/new`,
           reviewProps: {flavor_id}
-      }}>
+        }}>
           Submit a new Review
         </Link>
       </div>

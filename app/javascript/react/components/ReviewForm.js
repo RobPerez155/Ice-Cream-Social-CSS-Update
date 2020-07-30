@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { StarRating } from "@thumbtack/thumbprint-react";
 
 const ReviewForm = (props) => {
@@ -165,11 +166,16 @@ const ReviewForm = (props) => {
           <br />
           <br />
       </form>
+
+      <div>
+        <Link to={{
+          pathname:`/flavors/${flavorId}`,
+        }}>
+          Return to Flavor
+        </Link>
+      </div>
     </div>
   );
 };
 
 export default ReviewForm;
-
-
-<input type="submit" value="Submit" />
