@@ -11,9 +11,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :regions, only: [:index, :show]
       resources :flavors, only: [:show] do
-        resources :reviews, only: [:new, :create]
+        resources :reviews, only: [:create]
       end
-    end
-    
+    end 
   end
 end

@@ -9,6 +9,8 @@ const FlavorShowPage = (props) => {
     image_url: "",
   });
 
+  const [getReviews, setReviews] = useState([])
+
   let flavor_id = props.match.params.id;
 
   useEffect(() => {
@@ -24,8 +26,10 @@ const FlavorShowPage = (props) => {
       })
       .then((response) => response.json())
       .then((body) => {
-        let flavor = body;
+        let flavor = body.flavorData;
+        let reviews = body.reviewsData;
         setFlavorData(flavor);
+        setReviews(reviews)
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);

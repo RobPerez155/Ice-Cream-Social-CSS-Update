@@ -63,7 +63,7 @@ const ReviewForm = (props) => {
       })
       .then(response => response.json())
       .then(body => {
-        setNotice(body.noticeString)
+        setNotice(body.notice)
         body 
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))

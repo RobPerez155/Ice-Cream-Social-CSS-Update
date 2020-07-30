@@ -1,15 +1,11 @@
 class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
   # before_action :authenticate_user!
-  
-  def new
-  end
 
   def create
     binding.pry
     if current_user.nil?
-      notice = "Please login before submitting a review."
-      render json: { noticeString: notice }
+      render json: { notice: "Please login before submitting a review." }
     else
       review = Review.new(review_params)
       review.user_id = current_user.id
@@ -17,16 +13,15 @@ class Api::V1::ReviewsController < ApplicationController
 
       if review.valid?
         review.save 
-        notice = "Review submitted successfully!"
-        render json: { reviewData: review, noticeString: notice }
+        render json: { reviewData: review, notice: "Review submitted successfully!" }
       else
-        reviewErrors = "Error: " + review.errors.full_messages.to_sentence
-        render json: { reviewData: review, noticeString: reviewErrors }
+        render json: { reviewData: review, notice: "Error: #{review.errors.full_messages.to_sentence}" }
       end
     end
   end
 
+  private
   def review_params
-    params.require(:review).permit([:overall, :sweetness, :mouth_feel, :taste, :comment, :manufacturer, :flavor_id, :user_id])
+    params.require(:review).permit(:overall, :sweetness, :mouth_feel, :taste, :comment, :manufacturer, :flavor_id, :user_id)
   end
 end
