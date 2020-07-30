@@ -47,22 +47,17 @@ const FlavorShowPage = (props) => {
   return (
     <div>
       <FlavorInformationComponent
-        key={getFlavorData.id}
         name={getFlavorData.name}
         description={getFlavorData.description}
         image_url={getFlavorData.image_url}
       />
 
-      {reviewList}
-
-      <div>
-        <Link to={{
+      <Link to={{
           pathname:`/flavors/${flavor_id}/reviews/new`,
           reviewProps: {flavor_id}
-        }}>
-          Submit a new Review
-        </Link>
-      </div>
+      }}>
+        Submit a new Review
+      </Link>
     </div>
   );
 };

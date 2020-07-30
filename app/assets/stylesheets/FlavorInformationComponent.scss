@@ -1,0 +1,32 @@
+.flavor-information-border {
+  position: relative;
+  height: 80vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+
+  background-color: #edede4;
+  border: 20px solid #ffd7d6;
+  border-radius: 25px;
+  overflow: scroll;
+}
+
+.display-image {
+  img{border-radius: 5%;
+    margin-bottom: 25px;}
+ } 
+
+ .callout.secondary {
+  background-color: #f6edc7;
+  color: #0a0a0a;
+  text-align: center;
+}
+
+.table-top {
+  background-color: #c3e9e1;
+}
