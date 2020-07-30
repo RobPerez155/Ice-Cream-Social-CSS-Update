@@ -45,15 +45,17 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       manufacturer: "",
       flavor_id: test_flavor.id,
       user_id: test_user.id
-    }}}
+    },
+      flavor_id: test_flavor.id
+    }}
 
     it "should not persist if the review is not valid" do
       sign_in test_user
       binding.pry
-      post(:create, body: bad_review.to_json, params: {flavor_id: test_flavor.id })
+      post :create, params: bad_review
       returned_json = JSON.parse(response.body)
       binding.pry
-      expect(returned_json.notice).to eq("Error: Manufacturer can't be blank")
+      expect(returned_json["notice"]).to eq("Error: Manufacturer can't be blank")
     end
   end
 end
