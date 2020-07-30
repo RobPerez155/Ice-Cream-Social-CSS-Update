@@ -23,17 +23,14 @@ const FlavorInformationComponent = ({ name, description, image_url }) => {
               <tr>
                 <div class="table-top">
                 <th width="200">Username</th>
-                <th>{name}</th>
-                <th width="200">Rating</th>
-                <th width="200">Edit</th>
-                <th width="200">Delete</th>
+                <th width="450">Review</th>
                 </div>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Username</td>
-                <td>Review</td>
+                <td> </td>
                 <td>Rating</td>
                 <td>
                   <button type="button" class="button">
@@ -48,7 +45,7 @@ const FlavorInformationComponent = ({ name, description, image_url }) => {
               </tr>
               <tr>
                 <td>Username</td>
-                <td>Review</td>
+                <td> </td>
                 <td>Rating</td>
                 <td>
                   <button type="button" class="button">
@@ -63,7 +60,7 @@ const FlavorInformationComponent = ({ name, description, image_url }) => {
               </tr>
               <tr>
                 <td>Username</td>
-                <td>Review</td>
+                <td> </td>
                 <td>Rating</td>
                 <td>
                   <button type="button" class="button">
