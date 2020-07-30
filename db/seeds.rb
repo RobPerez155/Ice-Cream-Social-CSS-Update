@@ -5,6 +5,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 north_america = Region.create(name:"North America", image_url:"test.com")
 south_america = Region.create(name:"South America", image_url:"test.com")
 africa = Region.create(name:"Africa", image_url:"test.com")

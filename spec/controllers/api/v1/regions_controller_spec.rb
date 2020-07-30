@@ -43,10 +43,10 @@ RSpec.describe Api::V1::RegionsController, type: :controller do
   end
   
   describe "GET#show" do
-  it "should display all ice cream flavors associated with one region" do
-    get :show, params: { id: first_region.id }
-    returned_json = JSON.parse(response.body)
-    
+    it "should display all ice cream flavors associated with one region" do
+      get :show, params: { id: first_region.id }
+      returned_json = JSON.parse(response.body)
+      
       expect(response.status).to eq(200)
       expect(response.content_type).to eq("application/json")
 

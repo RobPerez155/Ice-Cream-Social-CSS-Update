@@ -3,4 +3,5 @@ class Flavor < ApplicationRecord
     validates :image_url, presence: true
 
     belongs_to :region
+    has_many :reviews
 end
