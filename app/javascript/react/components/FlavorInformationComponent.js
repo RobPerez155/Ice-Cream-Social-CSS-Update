@@ -46,6 +46,36 @@ const FlavorInformationComponent = ({ name, description, image_url }) => {
                   </button>
                 </td>
               </tr>
+              <tr>
+                <td>Username</td>
+                <td>Review</td>
+                <td>Rating</td>
+                <td>
+                  <button type="button" class="button">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="alert button">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Username</td>
+                <td>Review</td>
+                <td>Rating</td>
+                <td>
+                  <button type="button" class="button">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="alert button">
+                    Delete
+                  </button>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
