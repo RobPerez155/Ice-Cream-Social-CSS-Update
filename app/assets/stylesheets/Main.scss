@@ -1,50 +1,94 @@
 .top-bar {
-    background-color: #f6edc7;
+  background-color: #f6edc7;
 }
 
 .top-bar-section {
-    background-color: #f6edc7;
-    color: #8D6E5F;
+  background-color: #f6edc7;
+  color: #8d6e5f;
 }
 
 .top-bar.topbar-responsive {
-    background-color: #f6edc7;
-    color: #ffd7d6;
+  background-color: #f6edc7;
+  color: #ffd7d6;
 }
 
 #title-link {
-    color: #8D6E5F;
-    text-align: center;
+  color: #8d6e5f;
+  text-align: center;
 }
 
 #sign-up {
-    color: #8D6E5F;
+  color: #8d6e5f;
 }
 
 #sign-in {
-    color: #8D6E5F;
+  color: #8d6e5f;
 }
 
 #sign-out {
-    color: #8D6E5F;
+  color: #8d6e5f;
 }
 
 #sign-up:hover {
-    color: #C3E9E1;
+  color: #c3e9e1;
 }
 
 #sign-in:hover {
-    color: #C3E9E1;
+  color: #c3e9e1;
 }
 
 #sign-out:hover {
-    color: #C3E9E1;
+  color: #c3e9e1;
 }
 
 a:hover {
-    color: #C3E9E1;
+  color: #c3e9e1;
 }
 
+h3 {
+  text-align: center;
+}
+
+span.region-index-description {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+div.card-section {
+  text-align: center;
+}
+
+.main-border-pink {
+    position: relative;
+    height: 160vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 50px;
+  
+    background-color: #edede4;
+    border: 20px solid #ffd7d6;
+    border-radius: 25px;
+    overflow: clip;
+  }
+
+.scroll-border-pink {
+    position: relative;
+    height: 90vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 50px;
+  
+    background-color: #edede4;
+    border: 20px solid #ffd7d6;
+    border-radius: 25px;
+    overflow: scroll;
+  }
+
+  
 // #sign-up:visited {
 //     color: #C3E9E1;
 // }
@@ -56,3 +100,27 @@ a:hover {
 // #sign-out:visited {
 //     color: #C3E9E1;
 // }
+
+span.region-index-description {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+div.card-section {
+  text-align: center;
+}
+
+.basic-border-for-flavors {
+  position: absolute;
+  height: 70vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
+  background-color: #edede4;
+  border: 20px solid #ffd7d6;
+  border-radius: 25px;
+  overflow: scroll;
+}

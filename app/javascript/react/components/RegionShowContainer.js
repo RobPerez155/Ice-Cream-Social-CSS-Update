@@ -38,13 +38,17 @@ const RegionShowContainer = (props) => {
   });
 
   return (
+    <div class="scroll-border-pink">
     <div>
       <h3>{getRegionName}</h3>
-      <div className="grid-container">
-        <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-          {listFlavors}
+      <div class="basic-border-for-flavors">
+        <div className="grid-container">
+          <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+            {listFlavors}
+          </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
