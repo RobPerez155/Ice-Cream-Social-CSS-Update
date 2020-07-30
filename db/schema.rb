@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_22_183457) do
+ActiveRecord::Schema.define(version: 2020_07_28_174249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(version: 2020_07_22_183457) do
     t.string "image_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "overall", null: false
+    t.integer "sweetness", null: false
+    t.integer "mouth_feel", null: false
+    t.integer "taste", null: false
+    t.string "comment"
+    t.string "manufacturer", null: false
+    t.bigint "flavor_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username", default: "Ice Cream Fan", null: false
+    t.index ["flavor_id"], name: "index_reviews_on_flavor_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
