@@ -3,12 +3,12 @@ import React from "react";
 const FlavorInformationComponent = ({ name, description, image_url }) => {
   return (
     <>
-      <div class="basic-border">
+      <div class="flavor-information-border">
         <div class="basic-card">
           <div class="grid-x grid-padding-x align-center">
             <div class="cell small-4">
               <div class="basic-card-content">
-                <div class="basic-card-image">
+                <div class="basic-card-image display-image">
                   <img src={image_url} />
                 </div>
               </div>

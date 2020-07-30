@@ -34,13 +34,19 @@ const RegionsIndexPage = (props) => {
     );
   });
   return (
-    <div>
-      <div className="grid-container">
-        <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-          {listRegions}
+    <>
+      <span class="region-index-description">
+        <br />
+        <p>This will be a description of the region index page</p>
+      </span>
+      <div class="main-border-pink">
+        <div className="grid-container">
+          <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+            {listRegions}
+          </div>
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 };
 export default RegionsIndexPage;

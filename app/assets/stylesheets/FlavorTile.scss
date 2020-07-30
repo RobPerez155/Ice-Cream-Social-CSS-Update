@@ -1,4 +1,4 @@
-.flavor_tile_cell {
+.flavor-tile-cell {
   background-color: #edede4;
   width: calc(33.3333333333% - 1.875rem);
   border-radius: 5%;
@@ -10,10 +10,22 @@
     border-top-left-radius: 5%;}
 }
 
+.basic-border-pink {
+  position: absolute;
+  height: 85vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
+  background-color: #edede4;
+  border: 20px solid #ffd7d6;
+  border-radius: 25px;
+  overflow: scroll;
+ } 
+
 .name {
-  color: #000000;
   font-size: x-large;
   text-align: center;
   margin: 2%;
-
 }
