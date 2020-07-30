@@ -63,7 +63,6 @@ const ReviewForm = (props) => {
       .then(response => response.json())
       .then(body => {
         setNotice(body.notice)
-        body 
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
   };
@@ -162,8 +161,6 @@ const ReviewForm = (props) => {
         </label>
 
         <button type="submit" value="Submit" form="reviewForm">Submit Form</button>
-          <br />
-          <br />
       </form>
     </div>
   );

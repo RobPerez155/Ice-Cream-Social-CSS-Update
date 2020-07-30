@@ -5,7 +5,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
   let!(:test_region) { Region.create(
     name: "Test Region 1",
     image_url: "https://www.google.com",
-  ) }
+  )}
 
   let!(:test_flavor) { Flavor.create(
     name: "Chocolatey Goodness",
@@ -22,16 +22,19 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
 
   describe "POST#create" do
 
-    let!(:good_review) {{ review: {
-      overall: 3,
-      sweetness: 3,
-      mouth_feel: 3,
-      taste: 3,
-      comment: "Meh.",
-      manufacturer: "Not worth saying."
-    },
-      flavor_id: test_flavor.id
-    }}
+    let!(:good_review) {
+      { 
+        flavor_id: test_flavor.id,
+        review: {
+          overall: 3,
+          sweetness: 3,
+          mouth_feel: 3,
+          taste: 3,
+          comment: "Meh.",
+          manufacturer: "Not worth saying."
+        }
+      }
+    }
 
     it "should not persist if the user is not authenticated" do
       count = Review.count
@@ -54,16 +57,19 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       expect(returned_json["notice"]).to eq("Review submitted successfully!")
     end
 
-    let!(:bad_review) {{ review: {
-      overall: 5,
-      sweetness: 3,
-      mouth_feel: 4,
-      taste: 5,
-      comment: "",
-      manufacturer: ""
-    },
-      flavor_id: test_flavor.id
-    }}
+    let!(:bad_review) {
+      {
+        flavor_id: test_flavor.id,
+        review: {
+          overall: 5,
+          sweetness: 3,
+          mouth_feel: 4,
+          taste: 5,
+          comment: "",
+          manufacturer: ""
+        }
+      }
+    }
 
     it "should not persist if the review is not valid" do
       count = Review.count
