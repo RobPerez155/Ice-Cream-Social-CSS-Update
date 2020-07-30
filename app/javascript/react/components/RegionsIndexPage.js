@@ -39,7 +39,7 @@ const RegionsIndexPage = (props) => {
         <br />
         <p>This will be a description of the region index page</p>
       </span>
-      <div>
+      <div class="main-border-pink">
         <div className="grid-container">
           <div className="grid-x grid-margin-x small-up-2 medium-up-3">
             {listRegions}
