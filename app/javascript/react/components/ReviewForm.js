@@ -5,19 +5,12 @@ const ReviewForm = (props) => {
 
   let flavorId = props.match.params.flavor_id
 
-  // These 4 states hold each of our star ratings for review attributes
-  const [overallRating, setOverallRating] = useState(null);
-  const [sweetnessRating, setSweetnessRating] = useState(null);
-  const [mouthFeelRating, setMouthFeelRating] = useState(null);
-  const [tasteRating, setTasteRating] = useState(null);
-
   // These 4 states hold hover values for each review attribute
   const [overallHoverRating, setOverallHoverRating] = useState(undefined);
   const [sweetnessHoverRating, setSweetnessHoverRating] = useState(undefined);
   const [mouthFeelHoverRating, setMouthFeelHoverRating] = useState(undefined);
   const [tasteHoverRating, setTasteHoverRating] = useState(undefined);
 
-  // This complex state holds all other review attributes and receives the state from star ratings attributes before submission
   const [reviewData, setReviewData] = useState({
       overall: null,
       sweetness: null,
@@ -27,16 +20,19 @@ const ReviewForm = (props) => {
       manufacturer: ""
   })
 
+  const handleStarChange = (value, ratingName) => {
+    setReviewData({
+      ...reviewData,
+      [ratingName]: value,
+    });
+  }
+
   const [getNotice, setNotice] = useState("")
 
   const handleTextInputChange = (event) => {
     setReviewData({
       ...reviewData,
       [event.currentTarget.name]: event.currentTarget.value,
-      overall: overallRating,
-      sweetness: sweetnessRating,
-      mouth_feel: mouthFeelRating,
-      taste: tasteRating,
     });
   };
 
@@ -75,10 +71,10 @@ const ReviewForm = (props) => {
         <StarRating
           size="large"
           name="overall"
-          rating={overallRating}
+          rating={reviewData.overall}
           hoverRating={overallHoverRating}
           onStarClick={(value) => {
-            setOverallRating(value)
+            handleStarChange(value, "overall")
           }}
           value={reviewData.overall}
           onStarHover={(value) => {
@@ -92,11 +88,11 @@ const ReviewForm = (props) => {
         <h5>Sweetness</h5>
         <StarRating
           size="large"
-          name="overall"
-          rating={sweetnessRating}
+          name="sweetness"
+          rating={reviewData.sweetness}
           hoverRating={sweetnessHoverRating}
           onStarClick={(value) => {
-            setSweetnessRating(value)
+            handleStarChange(value, "sweetness")
           }}
           onStarHover={(value) => {
             setSweetnessHoverRating(value);
@@ -110,10 +106,10 @@ const ReviewForm = (props) => {
         <StarRating
           size="large"
           name="overall"
-          rating={mouthFeelRating}
+          rating={reviewData.mouth_feel}
           hoverRating={mouthFeelHoverRating}
           onStarClick={(value) => {
-            setMouthFeelRating(value);
+            handleStarChange(value, "mouth_feel")
           }}
           onStarHover={(value) => {
             setMouthFeelHoverRating(value);
@@ -126,11 +122,11 @@ const ReviewForm = (props) => {
         <h5>Taste</h5>
         <StarRating
           size="large"
-          name="overall"
-          rating={tasteRating}
+          name="taste"
+          rating={reviewData.taste}
           hoverRating={tasteHoverRating}
           onStarClick={(value) => {
-            setTasteRating(value);
+            handleStarChange(value, "taste")
           }}
           onStarHover={(value) => {
             setTasteHoverRating(value);
@@ -167,6 +163,3 @@ const ReviewForm = (props) => {
 };
 
 export default ReviewForm;
-
-
-<input type="submit" value="Submit" />
