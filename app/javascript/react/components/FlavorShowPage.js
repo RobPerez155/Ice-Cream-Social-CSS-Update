@@ -10,7 +10,7 @@ const FlavorShowPage = (props) => {
     image_url: "",
   });
 
-  const [getReviews, setReviews] = useState([])
+  const [getReviews, setReviews] = useState([]);
 
   let flavor_id = props.match.params.id;
 
@@ -36,13 +36,8 @@ const FlavorShowPage = (props) => {
   }, []);
 
   let reviewList = getReviews.map((review) => {
-    return (
-      <ReviewTile
-        key={review.id}
-        reviewData={review}
-      />
-    )
-  })
+    return <ReviewTile key={review.id} reviewData={review} />;
+  });
 
   return (
     <div>
@@ -53,28 +48,30 @@ const FlavorShowPage = (props) => {
             description={getFlavorData.description}
             image_url={getFlavorData.image_url}
           />
-          <table className="hover">
-            <thead>
-              <tr>
-                <div className="table-top">
-                <th width="200">Username</th>
-                <th width="450">Review</th>
-                </div>
-              </tr>
-            </thead>
-          <tbody>
-            {reviewList}
-          </tbody>
-          </table>
+        </div>
+        <div className="review-button">
+          <Link
+            to={{
+              pathname: `/flavors/${flavor_id}/reviews/new`,
+              reviewProps: { flavor_id },
+            }}
+            class="button primary"
+          >
+            New Review
+          </Link>
         </div>
       </div>
-
-      <Link to={{
-          pathname:`/flavors/${flavor_id}/reviews/new`,
-          reviewProps: {flavor_id}
-      }}>
-        New Review
-      </Link>
+      <table class="hover">
+        <thead>
+          <tr>
+            <div class="table-top">
+              <th width="200">Username</th>
+              <th width="450">Review</th>
+            </div>
+          </tr>
+        </thead>
+        <tbody>{reviewList}</tbody>
+      </table>
     </div>
   );
 };
