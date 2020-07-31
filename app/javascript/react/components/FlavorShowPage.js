@@ -46,17 +46,17 @@ const FlavorShowPage = (props) => {
 
   return (
     <div>
-      <div class="flavor-information-border">
-        <div class="basic-card">
+      <div className="flavor-information-border">
+        <div className="basic-card">
           <FlavorInformationComponent
             name={getFlavorData.name}
             description={getFlavorData.description}
             image_url={getFlavorData.image_url}
           />
-          <table class="hover">
+          <table className="hover">
             <thead>
               <tr>
-                <div class="table-top">
+                <div className="table-top">
                 <th width="200">Username</th>
                 <th width="450">Review</th>
                 </div>
