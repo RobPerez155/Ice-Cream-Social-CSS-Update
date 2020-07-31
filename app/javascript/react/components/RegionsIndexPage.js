@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import RegionTile from "./RegionTile";
-import FlavorShowPage from "./FlavorShowPage";
 
 const RegionsIndexPage = (props) => {
   const [getRegions, setRegions] = useState([]);
