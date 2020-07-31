@@ -60,7 +60,6 @@ const FlavorShowPage = (props) => {
             New Review
           </Link>
         </div>
-      </div>
       <table class="hover">
         <thead>
           <tr>
@@ -72,6 +71,7 @@ const FlavorShowPage = (props) => {
         </thead>
         <tbody>{reviewList}</tbody>
       </table>
+    </div>
     </div>
   );
 };
