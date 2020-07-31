@@ -48,3 +48,15 @@ whiskey_prune = Flavor.create(name: "Whiskey Prune", description: "This Aussie c
 goat_cheese_beet_swirl = Flavor.create(name: "Goat Cheese Beet Swirl", description: "The inspiration for this combo came from Samantha Kopicko's daily meal of a spinach, beet and goat cheese salad, which she decided to turn into a rich dessert. Well, almost — she skipped the spinach. Made with a goat cheese base and housemade beet syrup, it's earthy and creamy, and mixes sweet and savory flavors.", image_url: "http://storage.googleapis.com/zagat-article-ss/beet_ice_cream_at_Zagat.jpeg?h=646&w=646&auto=format", region: north_america)
 beetroot_chocolate_ginger = Flavor.create(name: "Beetroot Chocolate Ginger", description: "This is from 2019's best rated ice cream shop in the world and it's VEGAN!", image_url: "https://cdn.24.co.za/files/Cms/General/d/9464/18bdbcccedcd4a43ad1b5f985b244d3d.png", region: africa)
 tumeric_latte = Flavor.create(name: "Tumeric Latte", description: "This is from 2019's best rated ice cream shop in the world and it's VEGAN!", image_url: "https://cdn.24.co.za/files/Cms/General/d/9464/9eca39b095d34da387230f820290858a.png", region: africa)
+
+user1 = User.create(email: "test@test.com", username: "test1", password: "12345678")
+user2 = User.create(email: "test@test.com", username: "test2", password: "12345678")
+user3 = User.create(email: "test@test.com", username: "test3", password: "12345678")
+user4 = User.create(email: "test@test.com", username: "test4", password: "12345678")
+user5 = User.create(email: "test@test.com", username: "test5", password: "12345678")
+
+review1 = Review.create(comment: "wow this is amazing", manufacturer: "ben & jerry's", overall: 5, sweetness: 4, mouth_feel: 2, taste: 4, flavor: mustard, user: user1)
+review2 = Review.create(comment: "wow this is amazing", manufacturer: "ben & jerry's", overall: 5, sweetness: 4, mouth_feel: 2, taste: 4, flavor: mustard, user: user2)
+review3 = Review.create(comment: "wow this is amazing", manufacturer: "ben & jerry's", overall: 5, sweetness: 4, mouth_feel: 2, taste: 4, flavor: mustard, user: user3)
+review4 = Review.create(comment: "wow this is amazing", manufacturer: "ben & jerry's", overall: 5, sweetness: 4, mouth_feel: 2, taste: 4, flavor: mustard, user: user4)
+review5 = Review.create(comment: "wow this is amazing", manufacturer: "ben & jerry's", overall: 5, sweetness: 4, mouth_feel: 2, taste: 4, flavor: mustard, user: user5)
