@@ -60,18 +60,21 @@ const FlavorShowPage = (props) => {
             New Review
           </Link>
         </div>
-      </div>
-      <table class="hover">
-        <thead>
-          <tr>
-            <div class="table-top">
-              <th width="200">Username</th>
-              <th width="450">Review</th>
-            </div>
-          </tr>
-        </thead>
-        <tbody>{reviewList}</tbody>
-      </table>
+        <table class="hover">
+          <thead>
+            <tr>
+              <div class="table-top">
+                <th width="200">Username</th>
+                <th width="450">Review</th>
+                <th width="200">Rating</th>
+                <th width="200"> </th>
+                <th width="200"> </th>
+              </div>
+            </tr>
+          </thead>
+          <tbody>{reviewList}</tbody>
+        </table>
+       </div> 
     </div>
   );
 };
