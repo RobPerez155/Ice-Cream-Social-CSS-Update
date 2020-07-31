@@ -55,6 +55,7 @@ const FlavorShowPage = (props) => {
               pathname: `/flavors/${flavor_id}/reviews/new`,
               reviewProps: { flavor_id },
             }}
+            class="button primary"
           >
             New Review
           </Link>
