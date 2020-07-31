@@ -65,107 +65,109 @@ const ReviewForm = (props) => {
   };
 
   return (
-    <div>
-      {getNotice} <br/>
-      <form onSubmit={handleSubmit} id="reviewForm">
-        <h5>Overall</h5>
-        <StarRating
-          size="large"
-          name="overall"
-          rating={reviewData.overall}
-          hoverRating={overallHoverRating}
-          onStarClick={(value) => {
-            handleStarChange(value, "overall")
-          }}
-          value={reviewData.overall}
-          onStarHover={(value) => {
-            setOverallHoverRating(value);
-          }}
-          onMouseLeave={() => {
-            setOverallHoverRating(undefined);
-          }}
-        />
-
-        <h5>Sweetness</h5>
-        <StarRating
-          size="large"
-          name="sweetness"
-          rating={reviewData.sweetness}
-          hoverRating={sweetnessHoverRating}
-          onStarClick={(value) => {
-            handleStarChange(value, "sweetness")
-          }}
-          onStarHover={(value) => {
-            setSweetnessHoverRating(value);
-          }}
-          onMouseLeave={() => {
-            setSweetnessHoverRating(undefined);
-          }}
-        />
-
-        <h5>Mouth Feel</h5>
-        <StarRating
-          size="large"
-          name="overall"
-          rating={reviewData.mouth_feel}
-          hoverRating={mouthFeelHoverRating}
-          onStarClick={(value) => {
-            handleStarChange(value, "mouth_feel")
-          }}
-          onStarHover={(value) => {
-            setMouthFeelHoverRating(value);
-          }}
-          onMouseLeave={() => {
-            setMouthFeelHoverRating(undefined);
-          }}
-        />
-
-        <h5>Taste</h5>
-        <StarRating
-          size="large"
-          name="taste"
-          rating={reviewData.taste}
-          hoverRating={tasteHoverRating}
-          onStarClick={(value) => {
-            handleStarChange(value, "taste")
-          }}
-          onStarHover={(value) => {
-            setTasteHoverRating(value);
-          }}
-          onMouseLeave={() => {
-            setTasteHoverRating(undefined);
-          }}
-        />
-
-        <label>
-          Comment (optional):
-          <textarea
-            name="comment"
-            onChange={handleTextInputChange}
-            value={reviewData.comment}
+    <div className="body">
+      <div id="title">Submit a New Review</div>
+      <div className="error-notice" >
+        {getNotice} <br/>
+      </div>
+      <div className="review-form">
+        <form onSubmit={handleSubmit} id="reviewForm">
+        <div className="rating">Overall</div>
+          <StarRating
+            size="large"
+            name="overall"
+            rating={reviewData.overall}
+            hoverRating={overallHoverRating}
+            onStarClick={(value) => {
+              handleStarChange(value, "overall")
+            }}
+            value={reviewData.overall}
+            onStarHover={(value) => {
+              setOverallHoverRating(value);
+            }}
+            onMouseLeave={() => {
+              setOverallHoverRating(undefined);
+            }}
           />
-        </label>
 
-        <br />
-
-        <label>
-          Brand (required):
-          <textarea
-            name="manufacturer"
-            onChange={handleTextInputChange}
-            value={reviewData.manufacturer}
+        <div className="rating">Sweetness</div>
+          <StarRating
+            size="large"
+            name="sweetness"
+            rating={reviewData.sweetness}
+            hoverRating={sweetnessHoverRating}
+            onStarClick={(value) => {
+              handleStarChange(value, "sweetness")
+            }}
+            onStarHover={(value) => {
+              setSweetnessHoverRating(value);
+            }}
+            onMouseLeave={() => {
+              setSweetnessHoverRating(undefined);
+            }}
           />
-        </label>
 
-        <button type="submit" value="Submit" form="reviewForm">Submit Form</button>
-      </form>
+        <div className="rating">Mouth Feel</div>
+          <StarRating
+            size="large"
+            name="overall"
+            rating={reviewData.mouth_feel}
+            hoverRating={mouthFeelHoverRating}
+            onStarClick={(value) => {
+              handleStarChange(value, "mouth_feel")
+            }}
+            onStarHover={(value) => {
+              setMouthFeelHoverRating(value);
+            }}
+            onMouseLeave={() => {
+              setMouthFeelHoverRating(undefined);
+            }}
+          />
 
-      <div>
-        <Link to={{
-          pathname:`/flavors/${flavorId}`,
-        }}>
-          Return to Flavor
-        </Link>
+          <div className="rating">Taste</div>
+          <StarRating
+            size="large"
+            name="taste"
+            rating={reviewData.taste}
+            hoverRating={tasteHoverRating}
+            onStarClick={(value) => {
+              handleStarChange(value, "taste")
+            }}
+            onStarHover={(value) => {
+              setTasteHoverRating(value);
+            }}
+            onMouseLeave={() => {
+              setTasteHoverRating(undefined);
+            }}
+          />
+
+          <label>
+            Comment (optional):
+            <textarea
+              name="comment"
+              onChange={handleTextInputChange}
+              value={reviewData.comment}
+            />
+          </label>
+          <label>
+            Brand (required):
+            <textarea
+              name="manufacturer"
+              onChange={handleTextInputChange}
+              value={reviewData.manufacturer}
+            />
+          </label>
+
+          <button type="submit" class="button primary" value="Submit" form="reviewForm">Submit Form</button>
+        </form>
+
+        <div>
+          <Link to={{
+            pathname:`/flavors/${flavorId}`,
+          }} class="button primary">
+            Return to Flavor
+          </Link>
+        </div>
       </div>
     </div>
   );

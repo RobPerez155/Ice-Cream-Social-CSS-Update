@@ -1,13 +1,12 @@
-.top-bar {
-  background-color: #f6edc7;
-}
-
 .top-bar-section {
   background-color: #f6edc7;
   color: #8d6e5f;
 }
 
 .top-bar.topbar-responsive {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 3%;
   background-color: #f6edc7;
   color: #ffd7d6;
 }
@@ -65,51 +64,37 @@ div.card-section {
 }
 
 .main-border-pink {
-    position: relative;
-    // height: 160vh;
-    // margin-left: 5vh;
-    // margin-right: 5vh;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-  
-    background-color: #edede4;
-    border: 20px solid #ffd7d6;
-    border-radius: 25px;
-    overflow: clip;
-  }
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #edede4;
+  border: 20px solid #ffd7d6;
+  border-radius: 25px;
+  overflow: clip;
+}
 
 .scroll-border-pink {
-    position: relative;
-    height: 90vh;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    padding: 50px;
-  
-    background-color: #edede4;
-    border: 20px solid #ffd7d6;
-    border-radius: 25px;
-    overflow: scroll;
-  }
-
-// #sign-up:visited {
-//     color: #C3E9E1;
-// }
-
-// #sign-in:visited {
-//     color: #C3E9E1;
-// }
-
-// #sign-out:visited {
-//     color: #C3E9E1;
-// }
+  position: relative;
+  height: 85vh;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #edede4;
+  border: 20px solid #ffd7d6;
+  border-radius: 25px;
+  overflow: scroll;
+}
 
 span.region-index-description {
   margin-top: 5rem;
