@@ -46,7 +46,7 @@ const FlavorShowPage = (props) => {
 
   return (
     <div>
-      <div class="flavor-information-border">
+      <div className="scroll-border-pink">
         <div class="basic-card">
           <FlavorInformationComponent
             name={getFlavorData.name}

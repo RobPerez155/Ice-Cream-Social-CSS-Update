@@ -1,19 +1,14 @@
 .body {
   margin: 5%;
   margin-top: 25px;
-  label {font-weight: bold;}
-  input {background-color: #C3E9E1;}
+  label { font-weight: bold; }
+  input { background-color: #C3E9E1; }
+  input:focus { background-color: #C3E9E1; }
 }
 
 h3 {
   text-align: center;
   margin-top: 1%;
-}
-
-.pink-border {
-  border: 20px solid #ffd7d6;
-  border-radius: 25px;
-  background-color: #EDEDE4;
 }
 
 .form {
