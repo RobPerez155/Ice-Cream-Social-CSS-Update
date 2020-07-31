@@ -66,7 +66,7 @@ const ReviewForm = (props) => {
 
   return (
     <div className="body">
-      <div id="title">Submit a New Review</div>
+      <h3>Submit a New Review</h3>
       <div className="error-notice" >
         {getNotice} <br/>
       </div>
