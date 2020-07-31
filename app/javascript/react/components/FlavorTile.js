@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const FlavorTile = ({ name, flavorId, image_url }) => {
   return (
-    <div class="flavor-tile-cell">
+    <div className="flavor-tile-cell">
       <img src={image_url} />
-      <div class="name">
+      <div className="name">
         <Link to={`/flavors/${flavorId}`}>{name}</Link>
       </div>
     </div>
