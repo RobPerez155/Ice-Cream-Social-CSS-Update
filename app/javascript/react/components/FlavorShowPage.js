@@ -46,17 +46,34 @@ const FlavorShowPage = (props) => {
 
   return (
     <div>
-      <FlavorInformationComponent
-        name={getFlavorData.name}
-        description={getFlavorData.description}
-        image_url={getFlavorData.image_url}
-      />
+      <div class="flavor-information-border">
+        <div class="basic-card">
+          <FlavorInformationComponent
+            name={getFlavorData.name}
+            description={getFlavorData.description}
+            image_url={getFlavorData.image_url}
+          />
+          <table class="hover">
+            <thead>
+              <tr>
+                <div class="table-top">
+                <th width="200">Username</th>
+                <th width="450">Review</th>
+                </div>
+              </tr>
+            </thead>
+          <tbody>
+            {reviewList}
+          </tbody>
+          </table>
+        </div>
+      </div>
 
       <Link to={{
           pathname:`/flavors/${flavor_id}/reviews/new`,
           reviewProps: {flavor_id}
       }}>
-        Submit a new Review
+        New Review
       </Link>
     </div>
   );

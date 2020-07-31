@@ -51,7 +51,7 @@ a:hover {
 h3 {
   text-align: center;
   font-family: 'Lobster-Regular';
-  
+  color: #8d6e5f;
 }
 
 span.region-index-description {
@@ -59,18 +59,24 @@ span.region-index-description {
   margin-bottom: 5rem;
   text-align: center;
 }
+
 div.card-section {
   text-align: center;
 }
 
 .main-border-pink {
     position: relative;
-    height: 160vh;
-    margin-left: 5vh;
-    margin-right: 5vh;
+    // height: 160vh;
+    // margin-left: 5vh;
+    // margin-right: 5vh;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    padding: 50px;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 5%;
+    padding-bottom: 5%;
   
     background-color: #edede4;
     border: 20px solid #ffd7d6;
@@ -93,7 +99,6 @@ div.card-section {
     overflow: scroll;
   }
 
-  
 // #sign-up:visited {
 //     color: #C3E9E1;
 // }
@@ -109,10 +114,6 @@ div.card-section {
 span.region-index-description {
   margin-top: 5rem;
   margin-bottom: 5rem;
-  text-align: center;
-}
-
-div.card-section {
   text-align: center;
 }
 
