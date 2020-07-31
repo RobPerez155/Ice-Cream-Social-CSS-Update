@@ -55,11 +55,12 @@ const FlavorShowPage = (props) => {
           />
           <table class="hover">
             <thead>
-              <tr>
-                <div class="table-top">
+              <tr class="table-top">
                 <th width="200">Username</th>
                 <th width="450">Review</th>
-                </div>
+                <th width="200">Rating</th>
+                <th width="200"> </th>
+                <th width="200"> </th>
               </tr>
             </thead>
           <tbody>
