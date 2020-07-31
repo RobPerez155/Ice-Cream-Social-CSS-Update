@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlavorInformationComponent from "./FlavorInformationComponent";
+import ReviewTile from "./ReviewTile";
 import { Link } from "react-router-dom";
 
 const FlavorShowPage = (props) => {
@@ -29,24 +30,50 @@ const FlavorShowPage = (props) => {
         let flavor = body.flavorData;
         let reviews = body.reviewsData;
         setFlavorData(flavor);
-        setReviews(reviews)
+        setReviews(reviews);
       })
       .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }, []);
 
+  let reviewList = getReviews.map((review) => {
+    return (
+      <ReviewTile
+        key={review.id}
+        reviewData={review}
+      />
+    )
+  })
+
   return (
     <div>
-      <FlavorInformationComponent
-        name={getFlavorData.name}
-        description={getFlavorData.description}
-        image_url={getFlavorData.image_url}
-      />
+      <div className="scroll-border-pink">
+        <div class="basic-card">
+          <FlavorInformationComponent
+            name={getFlavorData.name}
+            description={getFlavorData.description}
+            image_url={getFlavorData.image_url}
+          />
+          <table class="hover">
+            <thead>
+              <tr>
+                <div class="table-top">
+                <th width="200">Username</th>
+                <th width="450">Review</th>
+                </div>
+              </tr>
+            </thead>
+          <tbody>
+            {reviewList}
+          </tbody>
+          </table>
+        </div>
+      </div>
 
       <Link to={{
           pathname:`/flavors/${flavor_id}/reviews/new`,
           reviewProps: {flavor_id}
       }}>
-        Submit a new Review
+        New Review
       </Link>
     </div>
   );

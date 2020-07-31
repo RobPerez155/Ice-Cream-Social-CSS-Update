@@ -1,0 +1,23 @@
+import React from "react";
+
+const ReviewTile = ({ reviewData }) => {
+  return (
+    <tr>
+      <td width="200">{reviewData.username}</td>
+      <td width="1000">{reviewData.comment}</td>
+      <td>{reviewData.overall}</td>
+      <td>
+        <button type="button" class="button">
+          Edit
+        </button>
+      </td>
+      <td>
+        <button type="button" class="alert button">
+          Delete
+        </button>
+      </td>
+    </tr>
+  );
+};
+
+export default ReviewTile;

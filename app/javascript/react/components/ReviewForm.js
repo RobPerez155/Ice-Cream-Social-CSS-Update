@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { StarRating } from "@thumbtack/thumbprint-react";
 
 const ReviewForm = (props) => {
@@ -158,6 +159,14 @@ const ReviewForm = (props) => {
 
         <button type="submit" value="Submit" form="reviewForm">Submit Form</button>
       </form>
+
+      <div>
+        <Link to={{
+          pathname:`/flavors/${flavorId}`,
+        }}>
+          Return to Flavor
+        </Link>
+      </div>
     </div>
   );
 };
