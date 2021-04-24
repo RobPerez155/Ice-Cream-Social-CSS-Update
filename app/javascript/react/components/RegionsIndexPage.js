@@ -38,11 +38,17 @@ const RegionsIndexPage = (props) => {
         <h3>Explore a world of flavors!</h3>
       </span>
       <div className="main-border-pink">
-          <div className="grid-container">
-            <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-              {listRegions}
-            </div>
+        <div className="grid-container">
+          <div
+            className="
+            grid-x 
+            grid-margin-x 
+            small-up-2 
+            medium-up-3"
+          >
+            {listRegions}
           </div>
+        </div>
       </div>
     </>
   );
