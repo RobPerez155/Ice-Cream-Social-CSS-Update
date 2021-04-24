@@ -5,8 +5,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-north_america = Region.create(name:"North America", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/north-america-512.png")
-south_america = Region.create(name:"South America", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/south-america-512.png")
+north_america = Region.create(name:"N. America", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/north-america-512.png")
+south_america = Region.create(name:"S. America", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/south-america-512.png")
 africa = Region.create(name:"Africa", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/africa-512.png")
 oceania = Region.create(name:"Oceania", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/australia-256.png")
 europe = Region.create(name:"Europe", image_url:"https://cdn1.iconfinder.com/data/icons/continents-icons/512/europe-512.png")

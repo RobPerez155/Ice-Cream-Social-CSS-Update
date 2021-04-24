@@ -1,36 +1,37 @@
+$woodBackground: url("https://ae01.alicdn.com/kf/HTB1mT1hcFGWBuNjy0Fbq6z4sXXai/7x5FT-Vintage-Horizontal-Wood-Grain-Pallets-Custom-Photo-Studio-Backdrop-Background-Vinyl-220cm-x-150cm.jpg_Q90.jpg_.webp");
+
 .top-bar-section {
-  background-color: #f6edc7;
-  color: #8d6e5f;
+  color: #f5f0ed;
 }
 
 .top-bar.topbar-responsive {
   padding-top: 0px;
   padding-bottom: 0px;
   height: 3%;
-  background-color: #f6edc7;
-  color: #ffd7d6;
+  background-image: $woodBackground;
+  color: #f5f0ed;
 }
 
 #title-link {
   padding-left: 10px;
-  color: #8d6e5f;
+  color: #f5f0ed;
   font-family: 'Lobster', cursive;
   padding-left: 20px;
 }
 
 #sign-up {
-  color: #8d6e5f;
-  background-color: #f6edc7;
+  color: #f5f0ed;
+  background-image: $woodBackground;
 }
 
 #sign-in {
-  color: #8d6e5f;
-  background-color: #f6edc7;
+  color: #f5f0ed;
+  background-image: $woodBackground;
 }
 
 #sign-out {
-  color: #8d6e5f;
-  background-color: #f6edc7;
+  color: #f5f0ed;
+  background-image: $woodBackground;
 }
 
 #sign-up:hover {
@@ -63,6 +64,12 @@ span.region-index-description {
 
 div.card-section {
   text-align: center;
+  font-weight: bold;
+  background-image: url("https://thumbs.dreamstime.com/t/closed-up-texture-dutch-traditional-sweets-stroopwafel-selective-focus-background-banner-101281632.jpg");
+  a{
+    color: #212B36;
+    font-size: large;
+  };
 }
 
 .main-border-pink {
@@ -129,4 +136,8 @@ h1 a {
 
 .review-button {
   text-align: center;
+}
+
+.bg {
+  background-image: url("https://static1.bigstockphoto.com/1/7/3/large1500/371404519.jpg"); 
 }
