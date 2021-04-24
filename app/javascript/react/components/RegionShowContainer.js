@@ -40,15 +40,13 @@ const RegionShowContainer = (props) => {
   return (
     <div>
       <h3>{getRegionName}</h3>
-      <div className="scroll-border-pink">
         <div>
           <div className="grid-container">
-            <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+            <div className="grid-x grid-margin-x small-up-4 medium-up-4">
               {listFlavors}
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };
