@@ -1,34 +1,30 @@
-.flavor-information-border {
-  position: relative;
-  height: 80vh;
-  margin-left: 5vh;
-  margin-right: 5vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 25px;
-
-  background-color: #edede4;
-  border: 20px solid #ffd7d6;
-  border-radius: 25px;
-  overflow: scroll;
-}
-
 .display-image {
   img{border-radius: 5%;
-    margin-bottom: 25px;
+    margin-top: 3%;
+    margin-bottom: 3%;
     height: 300px;  
   }
 } 
 
  .callout.secondary {
   background-color: #f6edc7;
-  color: #0a0a0a;
+  color: #35404E;
   text-align: center;
+  width: 50%;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table-top {
-  background-color: #c3e9e1;
+  background-image: url("https://ae01.alicdn.com/kf/HTB1mT1hcFGWBuNjy0Fbq6z4sXXai/7x5FT-Vintage-Horizontal-Wood-Grain-Pallets-Custom-Photo-Studio-Backdrop-Background-Vinyl-220cm-x-150cm.jpg_Q90.jpg_.webp");
+  color: #f6edc7;
+  font-weight: bold;
+  font-size: large;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title h5 {
+  color: #35404E;
 }

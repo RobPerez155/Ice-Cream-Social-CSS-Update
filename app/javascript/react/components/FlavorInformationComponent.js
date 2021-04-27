@@ -16,9 +16,9 @@ const FlavorInformationComponent = ({ name, description, image_url }) => {
       </div>
       <div
         className="
-        basic-card-content 
-        content 
-        callout secondary"
+        basic-card-content        
+        callout secondary
+        title"
       >
         <h5>{name}</h5>
         <p>{description}</p>
