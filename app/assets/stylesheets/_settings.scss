@@ -73,7 +73,7 @@ $foundation-palette: (
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
-  alert: #ffd7d6,
+  alert: #69170B,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -787,7 +787,8 @@ $switch-cursor-disabled: not-allowed;
 // 50. Table
 // ---------
 
-$table-background: #f6edc7;
+// $table-background: #f6edc7;
+$table-background: #EAEAEA;
 $table-color-scale: 5%;
 $table-border: 0px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);

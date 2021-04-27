@@ -41,39 +41,37 @@ const FlavorShowPage = (props) => {
 
   return (
     <div className="table">
-        <div className="basic-card">
-          <FlavorInformationComponent
-            name={getFlavorData.name}
-            description={getFlavorData.description}
-            image_url={getFlavorData.image_url}
-          />
-        </div>
-        <div className="review-button">
-          <Link
-            to={{
-              pathname: `/flavors/${flavor_id}/reviews/new`,
-              reviewProps: { flavor_id },
-            }}
-            class="button primary"
-          >
-            New Review
-          </Link>
-        </div>
-        <table class="hover">
-          <thead>
-            <tr>
-              <div class="table-top">
-                <th width="200">Username</th>
-                <th width="450">Review</th>
-                <th width="200">Rating</th>
-                <th width="200"> </th>
-                <th width="200"> </th>
-              </div>
-            </tr>
-          </thead>
-          <tbody>{reviewList}</tbody>
-        </table>
-       </div> 
+      <div className="basic-card">
+        <FlavorInformationComponent
+          name={getFlavorData.name}
+          description={getFlavorData.description}
+          image_url={getFlavorData.image_url}
+        />
+      </div>
+      <div className="review-button">
+        <Link
+          to={{
+            pathname: `/flavors/${flavor_id}/reviews/new`,
+            reviewProps: { flavor_id },
+          }}
+          className="button primary"
+        >
+          New Review
+        </Link>
+      </div>
+      <table className="hover">
+        <thead>
+          <tr className="table-top">
+            <th width="200">Username</th>
+            <th width="450">Review</th>
+            <th width="200">Rating</th>
+            <th width="200"> </th>
+            <th width="200"> </th>
+          </tr>
+        </thead>
+        <tbody>{reviewList}</tbody>
+      </table>
+    </div>
   );
 };
 

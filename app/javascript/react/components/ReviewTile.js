@@ -6,7 +6,7 @@ const ReviewTile = ({ reviewData }) => {
       <td width="200">{reviewData.username}</td>
       <td width="1000">{reviewData.comment}</td>
       <td>{reviewData.overall}</td>
-      <td>
+      <td className="blue">
         <button type="button" className="button">
           Edit
         </button>
