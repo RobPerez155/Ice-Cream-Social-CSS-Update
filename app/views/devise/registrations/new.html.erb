@@ -2,8 +2,7 @@
 <h3>Sign Up</h3>
 
 <div class="body">
-  <div class="main-border-pink">
-    <div class="form">
+    <div class="form white">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -39,7 +38,6 @@
 
   <div class="links">
     <%= render "devise/shared/links" %>
-  </div>
   </div>
   </div>
 </div>

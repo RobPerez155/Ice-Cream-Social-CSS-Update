@@ -107,7 +107,7 @@ const ReviewForm = (props) => {
             }}
           />
 
-        <div className="rating">Mouth Feel</div>
+        <div className="rating">Texture</div>
           <StarRating
             size="large"
             name="overall"
