@@ -5,7 +5,8 @@ const FlavorInformationComponent = ({ name, description, image_url }) => {
     <>
       <div
         className="
-        grid-x grid-padding-x 
+        grid-x 
+        grid-padding-x 
         align-center 
         cell small-4 
         basic-card-content 
