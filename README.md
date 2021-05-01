@@ -10,24 +10,20 @@ In this version of Ice Cream Social I have updated all the styling to align more
 
 Ice Cream Social utilizes Ruby on Rails on the backend, Javascript React on the frontend, Foundation and Scss for styling.
 
-https://ibb.co/Sy8d4MT
-https://ibb.co/tKz26VG
-https://ibb.co/X5gvxS9
-https://ibb.co/4YHrwpp
-https://ibb.co/2sfKdLk
-https://ibb.co/ncDJw6b
-https://ibb.co/XYrT32Y
-https://ibb.co/4MKyjMk
-https://ibb.co/1bjHZR4
+<a href="https://ibb.co/2sfKdLk"><img src="https://i.ibb.co/vQKzkrj/Flavor-Index-Page.png" alt="Flavor-Index-Page" border="0"></a>
+<a href="https://ibb.co/ncDJw6b"><img src="https://i.ibb.co/Z8hDfGV/Flavor-Info-Page.png" alt="Flavor-Info-Page" border="0"></a>
+<a href="https://ibb.co/XYrT32Y"><img src="https://i.ibb.co/RjkWBvj/Region-Index-Page.png" alt="Region-Index-Page" border="0"></a>
+<a href="https://ibb.co/4MKyjMk"><img src="https://i.ibb.co/7VjcGVh/Review-Page-1.png" alt="Review-Page-1" border="0"></a>
+<a href="https://ibb.co/1bjHZR4"><img src="https://i.ibb.co/DLT34wj/Review-Page-2.png" alt="Review-Page-2" border="0"></a>
 
 # Screenshots of App
-![Upd Ice Cream Social Region Index](https://ibb.co/X5gvxS9 "Homepage")
+![Upd Ice Cream Social Region Index](https://i.ibb.co/Sm89wR2/Upd-Region-Index-Page.png "Homepage")
 
-![Upd Ice Cream Social Flavor Index](https://ibb.co/Sy8d4MT "Flavor Index")
+![Upd Ice Cream Social Flavor Index](https://i.ibb.co/zxY7TBc/Upd-Flavor-Index-Page.png "Flavor Index")
 
-![Upd Ice Cream Social Flavor Info](https://ibb.co/tKz26VG "Flavor Info")
+![Upd Ice Cream Social Flavor Info](https://i.ibb.co/02K9LH7/Upd-Flavor-Info-Page.png "Flavor Info")
 
-![Upd Ice Cream Social Review](https://ibb.co/4YHrwpp "Review")
+![Upd Ice Cream Social Review](https://i.ibb.co/Hxj8Lqq/Upd-Review-Page.png "Review")
 
 # Built With
 [Ruby on Rails](https://guides.rubyonrails.org/ "Ruby on Rails Documentation")
