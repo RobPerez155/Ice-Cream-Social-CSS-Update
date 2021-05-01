@@ -10,14 +10,24 @@ In this version of Ice Cream Social I have updated all the styling to align more
 
 Ice Cream Social utilizes Ruby on Rails on the backend, Javascript React on the frontend, Foundation and Scss for styling.
 
+https://ibb.co/Sy8d4MT
+https://ibb.co/tKz26VG
+https://ibb.co/X5gvxS9
+https://ibb.co/4YHrwpp
+https://ibb.co/2sfKdLk
+https://ibb.co/ncDJw6b
+https://ibb.co/XYrT32Y
+https://ibb.co/4MKyjMk
+https://ibb.co/1bjHZR4
+
 # Screenshots of App
-![WineMate HomePage](https://i.ibb.co/gWRL16h/Wine-Mate-Homepage.png "Homepage")
+![Upd Ice Cream Social Region Index](https://ibb.co/X5gvxS9 "Homepage")
 
-![WineMate Sign Up](https://i.ibb.co/t3GPfxd/Wine-Mate-Sign-Up-Page.png "Sign Up")
+![Upd Ice Cream Social Flavor Index](https://ibb.co/Sy8d4MT "Flavor Index")
 
-![WineMate Log In](https://i.ibb.co/cL8q5Rq/Wine-Mate-Log-In-Page.png "Log In")
+![Upd Ice Cream Social Flavor Info](https://ibb.co/tKz26VG "Flavor Info")
 
-![WineMate Varietals](https://i.ibb.co/VjNz4d2/Wine-Mate-Varietals-Page.png "Varietals")
+![Upd Ice Cream Social Review](https://ibb.co/4YHrwpp "Review")
 
 # Built With
 [Ruby on Rails](https://guides.rubyonrails.org/ "Ruby on Rails Documentation")
