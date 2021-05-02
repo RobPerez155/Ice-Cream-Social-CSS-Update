@@ -11,23 +11,23 @@ Ice Cream Social is a group project I created remotely with a team of 4 others t
 Ice Cream Social utilizes Ruby on Rails on the backend, Javascript React on the frontend, Foundation and Scss for styling.
 
 # Original App Screenshots
-Homepage:
+### Homepage:
 ![Upd Ice Cream Social Region Index](https://i.ibb.co/RjkWBvj/Region-Index-Page.png "Homepage")
-Flavor Index:
+### Flavor Index:
 ![Upd Ice Cream Social Region Index](https://i.ibb.co/vQKzkrj/Flavor-Index-Page.png "Flavor Index")
-Flavor Info:
+### Flavor Info:
 ![Upd Ice Cream Social Region Index](https://i.ibb.co/Z8hDfGV/Flavor-Info-Page.png "Flavor Info")
-Review Page:
+### Review Page:
 ![Upd Ice Cream Social Region Index](https://i.ibb.co/7VjcGVh/Review-Page-1.png "Review Page")
 
 # Updated App Screenshots
-Homepage:
+### Homepage:
 ![Upd Ice Cream Social Region Index](https://i.ibb.co/Sm89wR2/Upd-Region-Index-Page.png "Homepage")
-Flavor Index:
+### Flavor Index:
 ![Upd Ice Cream Social Flavor Index](https://i.ibb.co/zxY7TBc/Upd-Flavor-Index-Page.png "Flavor Index")
-Flavor Info:
+### Flavor Info:
 ![Upd Ice Cream Social Flavor Info](https://i.ibb.co/02K9LH7/Upd-Flavor-Info-Page.png "Flavor Info")
-Review Page:
+### Review Page:
 ![Upd Ice Cream Social Review](https://i.ibb.co/Hxj8Lqq/Upd-Review-Page.png "Review")
 
 # Built With
