@@ -1,12 +1,11 @@
 # README
 [![Codeship Status for LegioTitanicus/Ice_Cream_Social](https://app.codeship.com/projects/cafd2db0-ace2-0138-c747-76dd5aede139/status?branch=master)](https://app.codeship.com/projects/403543)
 
-Ice Cream Social
 
 # Summary
 In this version of Ice Cream Social I have updated all the styling to coordinate the colors and textures to what I imagine an artisinal ice cream shop out of a renovated factory plaza might look like. 
 
-Ice Cream Social is a group project I created remotely with a team of 4 others to bring together a couple of our passions, ice cream and ice cream based excuses to travel. Ice Cream Social allows users to comment, explore, and rate their unique ice cream experiences throughout the world. 
+Ice Cream Social is a group project I created remotely with a team of 4 to bring together a couple of our passions, ice cream and travel. This app introduces users to unique ice cream flavors they can look for while traveling to different parts of the world. Some of these flavors include the extreme like Scorpion pepper from Taiwan and Lobster from Maine, others are more interesting like Gin & Tonic from Spain and Ube from Hawaii. Ice Cream Social allows users to comment, explore, and rate their unique ice cream experiences throughout the world. 
 
 Ice Cream Social utilizes Ruby on Rails on the backend, Javascript React on the frontend, Foundation and Scss for styling.
 
