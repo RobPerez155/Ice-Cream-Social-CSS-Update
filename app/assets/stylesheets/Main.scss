@@ -77,56 +77,10 @@ div.card-section {
   };
 }
 
-.main-border-pink {
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: #edede4;
-  border: 20px solid #ffd7d6;
-  border-radius: 25px;
-  overflow: clip;
-}
-
-.scroll-border-pink {
-  position: relative;
-  height: 85vh;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: #edede4;
-  border: 20px solid #ffd7d6;
-  border-radius: 25px;
-  overflow: scroll;
-}
-
 span.region-index-description {
   margin-top: 5rem;
   margin-bottom: 5rem;
   text-align: center;
-}
-
-.basic-border-for-flavors {
-  position: absolute;
-  height: 70vh;
-  margin-left: 5vh;
-  margin-right: 5vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  background-color: #edede4;
-  border: 20px solid #ffd7d6;
-  border-radius: 25px;
-  overflow: scroll;
 }
 
 @font-face {
